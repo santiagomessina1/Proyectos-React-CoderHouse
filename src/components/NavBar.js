@@ -1,20 +1,21 @@
 import React from "react";
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from 'react-bootstrap/Button';
 const NavBar = () =>{
     return(
-        <header className="headerIndex">
-            <nav className="navIndex">
-                <h1 className="logo">Blue <span>Label</span></h1>
-                <div >
-                    <ul className="navigation">
-                        <li>Home</li>
-                        <li>Products</li>
-                        <li>Shopping cart</li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
+        <Navbar className='navIndex'>
+        <Container >
+          <Navbar.Brand href="#home" className='logo'>Blue <span>Label</span></Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home" className='links'>Home</Nav.Link>
+            <Nav.Link href="#features">Products</Nav.Link>
+            <Button variant="outline-dark">Shopping Cart</Button>{' '}
+          </Nav>
+        </Container>
+      </Navbar>
 
         
     )
