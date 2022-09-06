@@ -16,7 +16,7 @@ code {
   background-color: #233142;
   width: 100%;
   display: flex;
-  justify-items: flex-end;
+  justify-content: center;
 }
 .headerInicio .container-fluid .navbar-brand {
   text-transform: uppercase;
@@ -47,3 +47,20 @@ code {
 }
 
 
+.banner{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #455d7a;
+}
+.banner h1{
+  color: #f95959c3;
+
+}
+.subTitle{
+  color: white;
+  font-size: 20px;
+  
+}
