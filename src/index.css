@@ -62,5 +62,53 @@ code {
 .subTitle{
   color: white;
   font-size: 20px;
-  
+
+}
+.card{
+  display: flex;
+  justify-content: center;
+  width: 337px;
+  align-items: center;
+  border: none;
+  margin: auto;
+  margin-top: 30px;
+  padding-bottom: 20px; 
+}
+
+.counter{
+padding-left: 10px;
+padding-right: 10px;
+text-align: center;
+}
+
+.increase, .decrease{
+  text-align: center;
+  border: none;
+  background-color: #113f67;
+  color: white;
+  font-size: 20px;
+  width: 30px;  
+}
+
+
+
+
+.addToCart{
+  background-color: #455d7a;
+  color: white;
+  border: none;
+  height: 32px;
+  margin-left: 20px;
+}
+.card img{
+  width: 330px;
+}
+
+.card h5{
+  text-align: center;
+}
+
+.card div{
+  display: flex;
+ 
 }
