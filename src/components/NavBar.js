@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-
+import ItemCount from "./ItemCount";
 
 function NavBar() {
   const categorias = [
@@ -29,7 +29,7 @@ function NavBar() {
                 })
               }
               <li className="nav-item">
-                <a className="nav-link text-light link--3" href=""><CartWidget /> </a>
+                <a className="nav-link text-light link--3" href=""><CartWidget /></a>
               </li>
             </ul>
           </div>
