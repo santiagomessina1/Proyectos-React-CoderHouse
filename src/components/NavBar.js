@@ -1,6 +1,5 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import ItemCount from "./ItemCount";
 
 function NavBar() {
   const categorias = [
@@ -12,8 +11,8 @@ function NavBar() {
     <header className="headerInicio">
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
-          <a className="navbar-brand text-light " href="">Blue <span className="rojo">Label</span>
-          </a>
+          <span className="navbar-brand text-light " >Blue <span className="rojo">Label</span>
+          </span>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -22,14 +21,14 @@ function NavBar() {
               
               {
                 categorias.map((categoria)=>{
-                  return(<li className="nav-item">
-                  <a key={categoria.id} className="nav-link text-light link--3" href="">{categoria.name}</a>
+                  return(<li className="nav-item" key={categoria.id} >
+                  <span className="nav-link text-light link--3" href="">{categoria.name}</span>
                 </li>)
                   
                 })
               }
               <li className="nav-item">
-                <a className="nav-link text-light link--3" href=""><CartWidget /></a>
+                <span className="nav-link text-light link--3" ><CartWidget /></span>
               </li>
             </ul>
           </div>
