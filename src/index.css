@@ -44,194 +44,186 @@ body {
 ::-webkit-scrollbar-track:active {
   background: #e1e1e1;
 }
-.headerInicio {
-  background-color: var(--mainBlack);
-  width: 100%;
+
+.container-fluid{
   display: flex;
-  justify-content: center;
-}
-.headerInicio .container-fluid .navbar-brand {
-  text-transform: uppercase;
-  font-size: 28px;
-  font-style: italic;
-}
-.headerInicio .container-fluid .navbar-brand span {
-  color: var(--primaryColor);
-}
-.headerInicio .container-fluid .navbar-toggler {
-  background-color: var(--primaryColor);
-}
-.headerInicio .container-fluid .navbar-nav {
-  display: flex;
-  align-items: center;
-}
-.headerInicio .container-fluid .navbar-nav .nav-item .nav-link {
-  box-shadow: inset 0 0 0 0 var(--primaryColor);
-  color: #54b3d6;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-  margin: 15px;
-  text-transform: uppercase;
-}
-.headerInicio .container-fluid .navbar-nav .nav-item .nav-link:hover {
-  box-shadow: inset 150px 0 0 0 var(--primaryColor);
-  color: white;
-  transition: box-shadow 1.5s;
+  flex-direction: column;  
 }
 
-.banner{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  background-color: var(--primaryColor);
-}
-.banner h1{
-  color: #f95959c3;
-
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 1%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-.img-container {
-    position: relative;
-    overflow: hidden;
-}
-
- .bag-btn {
-    background: var(--primaryColor);
-    color: var(--mainWhite);
-    border: none;
-    text-transform: uppercase;
-    padding: 0.5rem 0.75rem;
-    letter-spacing: var(--mainSpacing);
-    transition: var(--mainTransition);
-    cursor: pointer;
-    margin-top: 5px;
-    font-size: 15px;
-} 
-
-.bag-btn:hover {
-    background: var(--mainWhite);
-    color: var(--primaryColor);
-}
-
-.product-img {
-    display: block;
-    width: 300px;
-    min-height: 12rem;
-    transition: var(--mainTransition);
-}
-
-.img-container:hover .product-img {
-    opacity: 0.5;
-}
-
-.product h3 {
-    text-transform: capitalize;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    letter-spacing: var(--mainSpacing);
-    text-align: center;
-    
-}
-
-.product h4 {
-    margin-top: 0.7rem;
-    letter-spacing: var(--mainSpacing);
-    color: var(--primaryColor);
-    text-align: center;
-}
-
-
-.card {
-  width: 330px;
-  height: 570px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
-  justify-content: center;
-}
-
-
-
-.card img {
-  width: 100%;
-  height: 350px;
-}
-
-.card-body {
-  padding: 5px;
-}
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-}
-
-.card-body p {
-  color: #3d3d3d;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-.view-btn a {
-  padding: 5px 15px;
-  border-radius: 3px;
-  text-decoration: none;
+.nav-link{
+  color: black;
   margin-left: 10px;
-  border: 2px solid var(--primaryColor);
-    color: var(--primaryColor);
-}
-
-.btn-group {
-  display: flex;
-  margin-left: 10px;
-  margin-bottom: 25px;
-}
-.counter{
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-right: 10px;
   text-align: center;
-  }
-  
-  .increase, .decrease{
-    text-align: center;
-    border: none;
-    color: var(--mainBlack);
-    font-size: 20px;
-    font-weight: bolder;
-    width: 30px;  
-  }
-  
-  .addToCart{
-    background-color: var(--primaryColor);
-    color: white;
-    border: none;
-    height: 32px;
-    margin-left: 20px;
-  }
+}
 
-  .add{
-    display: flex;
-  }
-
-  .values{
-    border: 2px solid var(--primaryColor);
-  }
+.cart{
+  display: flex;
+  justify-content: flex-end;
+  height: 30px;
+  font-size: 30px;
+  width: 100%;
+  
+}
+.logo{
+  width: 150px;
+}
 
 .spinnerInside{
   height: 100vh;
   display: flex;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
+
+.banner{
+  background-color: rgb(201, 161, 109);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 157px;
+  margin-right: 143px;
+  text-align: center;
+  font-family: "HM Sans Semi Bold","HMSansHebrew-SemiBold","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  line-height: 1.166666667;
+  font-size: 1.5rem;
+  color: white;
+  padding: 2%;
+  margin-bottom: 15px;
+}
+
+
+.title, .subTitle{
+  font-weight: bolder;
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+.container a{
+  color: black;
+  text-decoration: none;
+}
+.card{
+  width: 300px;
+  border: none;
+  padding-bottom: 30px;
+}
+.card img{
+  width: 317px;
+}
+
+.card-title h3, h4{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 20px;
+  color: black;
+  font-weight: 600;
+
+
+}
+.card-title h4:hover{
+  text-decoration: underline;
+}
+.view-btn a{
+  color: black;
+  font-size: 15px;
+  
+}
+.view-btn{
+  margin-top: -10px;
+}
+
+
+footer{
+  background: #e4e4e4;  
+  
+
+}
+
+footer li{
+  font-size: 20px;
+  text-decoration: none;
+  list-style: none;
+  
+}
+
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+  justify-items: center;
+  align-items: center;
+  }
+  
+  .menu { 
+    grid-area: 1 / 1 / 2 / 2; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu h2{
+    font-weight: bolder;
+  }
+  .content { 
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   }
+
+  .footerImg { 
+    grid-area: 1 / 3 / 2 / 4; 
+    width: 200px;
+  }
+
+.links{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #233142;
+  text-decoration: none;
+  
+}
+
+.anchors{
+  text-decoration: none;
+  color: #233142;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+
+footer small{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
   .spinner{
  
      align-items: center;
