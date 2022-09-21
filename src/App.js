@@ -3,9 +3,8 @@ import NavBar from './components/NavBar'
 import ItemListContainer from "./components/ItemListContainer";
 import Footer from './components/Footer'
 import ItemDetailContainer from "./components/ItemDetailContainer";
-
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CartWidget from "./components/CartWidget";
 
 
 const App = () => {
@@ -14,12 +13,15 @@ const App = () => {
     <>
       <BrowserRouter>
         <NavBar />
-        <ItemListContainer greeting={message} />
-        <ItemDetailContainer />
+        <Routes>
+          <Route path="/" element={ <ItemListContainer greeting={message} /> } />
+          <Route path="/categoria/:categoryId" element={ <ItemListContainer greeting={message} /> }/>
+          <Route path="/producto/: productId" element={ <ItemDetailContainer /> }/>
+          <Route path="/cart" element={ <CartWidget/> } />   
+        </Routes>
         <Footer />
       </BrowserRouter>
-
-
+      
     </>
   )
 }

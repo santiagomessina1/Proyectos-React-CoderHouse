@@ -1,3 +1,4 @@
+import { SpaRounded } from '@mui/icons-material'
 import React from 'react'
 import Item from './Item'
 
@@ -5,7 +6,14 @@ export const ItemList = ( {listProducts} ) => {
     
   return (
     <>
-        {listProducts.map((prod,i) => <Item  key={`${prod.title}-${i}`} product= {prod} />   )}    
+        {
+        
+        ItemList.length > 0 ?
+        listProducts.map((prod,i) => <Item  key={`${prod.title}-${i}`} product= {prod} />)
+        :
+        <span></span>
+        
+        }    
     </>
   )
 }

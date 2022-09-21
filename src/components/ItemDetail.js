@@ -3,7 +3,7 @@ import ItemCount from './ItemCount'
 const ItemDetail = ({ product }) => {
     return (
         <>
-            <div className="container-details-products">
+                <div className="container-details-products">
                 <div className="product-image">
                     <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F45%2F9d%2F459d9837c4a4ed2a2ff044fbe050f7f2ab9f88a2.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]" alt="" className="product-pic" />
                     <div className="dots">
@@ -16,7 +16,7 @@ const ItemDetail = ({ product }) => {
 
                 <div className="product-details">
                     <section>
-                        <h1 className="title"> {product.title} </h1>
+                        <h1 className="title">{product.title} </h1>
                         <div className="price">
                             <span className="">$144.99</span>
                         </div>
@@ -66,6 +66,9 @@ const ItemDetail = ({ product }) => {
 
 
             
+
+
+            
         </>
     )
 }
@@ -81,49 +84,3 @@ export default ItemDetail
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <section classNameName='detail-products'>
-     <div classNameName="card-detail-product">
-        <div classNameName="container">
-            <div classNameName="card">
-                <div classNameName="img-container">
-                    <img src="" alt="" />
-                    <span>carousell</span>
-                </div>
-                <div classNameName="card-body-detail">
-                    <h1>titulo</h1>
-                    <p>precio</p>
-                    <span>estrellas</span>
-                    <div classNameName="colors"></div>
-                    <div classNameName="size"></div>
-                    <div classNameName="quantity"></div>
-                    <div classNameName="add-to-cart"></div>
-                </div>
-            </div>
-        </div>
-     </div>
-     
-    </section> */}

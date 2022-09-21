@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-        {loader ?
+        {   loader ?
             <div className="spinnerInside"><div className="spinner"></div></div>
             :
             <ItemDetail listProducts={listProducts}/>
