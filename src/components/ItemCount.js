@@ -1,7 +1,8 @@
 import React from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
-
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import CartWidget from './CartWidget';
 function ItemCount() {
     const [count, setCount] = useState(1);
     let stock = count;
@@ -37,12 +38,12 @@ function ItemCount() {
             <div className='add'>
 
                 <div className='values'>
-                    <button className='increase' onClick={onSubstract}>-</button>
+                    <button className='decrease' onClick={onSubstract}> <FaArrowLeft/></button>
                     <span className='counter' stock={5}>{count}</span>
-                    <button className='decrease' onClick={onAdd}>+</button>
+                    <button className='increase' onClick={onAdd}><FaArrowRight/></button>
                     <Toaster />
                 </div>
-                <button className='addToCart' onClick={addToCart}>Agregar al carrito</button>
+                <button className='addToCart' onClick={addToCart}> <CartWidget/> Agregar al carrito</button>
                 <Toaster />
             </div>
         </>

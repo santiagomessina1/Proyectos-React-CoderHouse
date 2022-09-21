@@ -3,8 +3,10 @@ import { ItemList } from './ItemList'
 import { products } from '../assets/products'
 import { customizedFetch } from '../utils/customizedFetch'
 import { useEffect, useState } from 'react'
-const ItemListContainer = ({ greeting }) => {
 
+
+const ItemListContainer = ({ greeting }) => {
+  
   const [listProducts, setListProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -14,7 +16,6 @@ const ItemListContainer = ({ greeting }) => {
       .then(res => {
         setLoading(false)
         setListProducts(res)
-
       })
   }, [])
 
@@ -32,8 +33,6 @@ const ItemListContainer = ({ greeting }) => {
           <ItemList listProducts={listProducts} />
         }
       </section>
-
-
     </>
   )
 }

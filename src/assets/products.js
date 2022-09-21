@@ -59,7 +59,8 @@ export const products = [
     title: "Relaxed-fit  Sweatshirt", 
     price: 4500, 
     image: "./images/Relaxed-fit-Washed-look-Sweatshirt-gris.jpg",
-    category:"Sweatshirt"},
+    category:"Sweatshirt",
+    },
        
     {id: 11, 
     title: "Skinny Jeans", 

@@ -2,8 +2,8 @@ import React from "react";
 import CartWidget from "./CartWidget";
 import logo from '../logo.png';
 import {Menu} from "../assets/Menu"
-
-function NavBar() {
+import {Link, NavLink} from 'react-router-dom'
+function NavBar({categorias}) {
 
   return (
     <>
@@ -11,7 +11,7 @@ function NavBar() {
       <header className="headerInicio">
         <nav className="navbar navbar-expand-lg ">
           <div className="container-fluid">
-          <span className="cart" ><CartWidget /></span>
+          <Link className="cart" ><CartWidget /></Link>
 
             <img src={logo} alt="" className="logo"/>
             
