@@ -7,10 +7,11 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
   
-  let { categoryId } = useParams()
-   
+  let { categoryId } = useParams() 
+  console.log(categoryId);
   const [listProducts, setListProducts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true) 
+  const URL = products
 
   useEffect(() => {
     setLoading(true)
@@ -20,9 +21,6 @@ const ItemListContainer = ({ greeting }) => {
         setListProducts(res)
       })
   }, [])
-
-
-
 
   return (
     <>

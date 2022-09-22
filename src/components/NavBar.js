@@ -24,7 +24,6 @@ function NavBar({ categorias }) {
           </div>
         </nav>
       </header>
-
     </>
   );
 }

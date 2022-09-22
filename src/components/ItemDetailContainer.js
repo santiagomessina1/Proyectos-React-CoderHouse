@@ -6,14 +6,14 @@ import ItemDetail from './ItemDetail'
 
 const ItemDetailContainer = () => {
    
-    const [listProducts, setListProucts] = useState([])
+    const [productDetail, setProductDetail] = useState({})
     const [loader, setLoader] = useState(true)
     useEffect(() =>{
         setLoader(true)
-        customizedFetch(products)
+        customizedFetch(products, 1)
             .then(res => {
                 setLoader(false)
-                setListProucts(res)
+                setProductDetail(res)
             })
     }, [])
 
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
         {   loader ?
             <div className="spinnerInside"><div className="spinner"></div></div>
             :
-            <ItemDetail listProducts={listProducts}/>
+            <ItemDetail productDetail={productDetail}/>
         }
         
     </>

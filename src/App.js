@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CartWidget from "./components/CartWidget";
+import ItemDetail from "./components/ItemDetail";
 
 
 const App = () => {
@@ -19,9 +20,9 @@ const App = () => {
           <Route path="/producto/: productId" element={ <ItemDetailContainer /> }/>
           <Route path="/cart" element={ <CartWidget/> } />   
         </Routes>
+        <ItemDetailContainer />
         <Footer />
       </BrowserRouter>
-      
     </>
   )
 }

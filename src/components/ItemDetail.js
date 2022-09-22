@@ -1,11 +1,13 @@
 import React from 'react'
 import ItemCount from './ItemCount'
-const ItemDetail = ({ product }) => {
+
+const ItemDetail = ({ productDetail }) => {
     return (
         <>
-                <div className="container-details-products">
+            <hr />
+            <div className="container-details-products">
                 <div className="product-image">
-                    <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F45%2F9d%2F459d9837c4a4ed2a2ff044fbe050f7f2ab9f88a2.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]" alt="" className="product-pic" />
+                    <img src={productDetail.image} alt="" className="product-pic" />
                     <div className="dots">
                         <a href="#!" className="active"><i>1</i></a>
                         <a href="#!"><i>2</i></a>
@@ -16,17 +18,11 @@ const ItemDetail = ({ product }) => {
 
                 <div className="product-details">
                     <section>
-                        <h1 className="title">{product.title} </h1>
+                        <h1 className="title"> {productDetail.title} </h1>
                         <div className="price">
-                            <span className="">$144.99</span>
+                            <span className="">${productDetail.price}</span>
                         </div>
-                        <div className="rate">
-                            <a href="#!" className="active">★</a>
-                            <a href="#!" className="active">★</a>
-                            <a href="#!" className="active">★</a>
-                            <a href="#!">★</a>
-                            <a href="#!">★</a>
-                        </div>
+
                     </section>
                     <div className="controls">
                         <div className="color">
@@ -37,38 +33,35 @@ const ItemDetail = ({ product }) => {
                                 <li><a href="#!" className="colors color-bdot5"></a></li>
                             </ul>
                         </div>
-                        
-
 
                     </div>
                     <div className="size">
-                            <div class="dropdown">
-                                <a class="btn dropdown-toggle sizes" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Talles
-                                </a>
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle sizes" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Talles
+                            </a>
 
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">XS</a></li>
-                                    <li><a class="dropdown-item" href="#">S</a></li>
-                                    <li><a class="dropdown-item" href="#">M</a></li>
-                                    <li><a class="dropdown-item" href="#">L</a></li>
-                                    <li><a class="dropdown-item" href="#">XL</a></li>
-                                </ul>
-                            </div>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">XS</a></li>
+                                <li><a class="dropdown-item">S</a></li>
+                                <li><a class="dropdown-item">M</a></li>
+                                <li><a class="dropdown-item">L</a></li>
+                                <li><a class="dropdown-item">XL</a></li>
+                            </ul>
                         </div>
-                        <div className="qty">
-                            <h5>Cantidad:   < ItemCount /> </h5>
-                            
-                        </div>
+                    </div>
+                    <div className="qty">
+                        <h5>Cantidad:   < ItemCount /> </h5>
+                    </div>
+
+                    <div className='details'>
+                        <p>MATERIALES, CUIDADOS Y ORIGEN
+                            ORIGEN
+                            Trabajamos con nuestros proveedores, trabajadores, sindicatos y organismos internacionales para desarrollar una cadena de suministro en la que se respetan y promueven los derechos humanos. </p>
+                    </div>
                 </div>
             </div>
 
-
-
-            
-
-
-            
         </>
     )
 }

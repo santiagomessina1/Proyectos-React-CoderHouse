@@ -3,14 +3,14 @@ export const products = [
     title: "Relaxed Fit Hoodie", 
     price: 4500, 
     image: "./images/hoodie.jpg",
-    category: "hoodie"},
+    category: "Buzos"},
     
 
    {id: 2, 
     title: "Relaxed-fit  Sweatshirt", 
     price: 4500, 
     image: "./images/Relaxed-fit-Washed-look-Sweatshirt-negro.jpg",
-    category:"Sweatshirt"},
+    category:"Buzos"},
    
    {id: 3, 
     title: "Skinny Jeans", 
@@ -28,38 +28,38 @@ export const products = [
     title: "Relaxed Fit T-shirt", 
     price: 5500, 
     image: "./images/Relaxed-Fit-T-shirt.jpg",
-    category:"T-shirt"},
+    category:"Remeras"},
 
    {id: 6, 
     title: "Relaxed Fit Cotton T-shirts", 
     price: 4500, 
     image: "./images/Relaxed-Fit-Cotton-T-shirt.jpg",
-    category:"T-shirt"},
+    category:"Remeras"},
    
    {id: 7, 
     title: "Sneakers", 
     price: 15500, 
     image: "./images/Canvas-Sneakers-blancas.jpg",
-    category:"Sneakers"},
+    category:"Zapatillas"},
 
    {id: 8, 
     title: "Canvas High Tops",
     price: 16500, 
     image: "./images/Canvas-High-Tops.jpg",
-    category:"Sneakers"},
+    category:"Zapatillas"},
 
     {id: 9, 
     title: "Relaxed Fit Hoodie", 
     price: 4500, 
     image: "./images/Regular-Fit-Printed-Hoodie-gris.jpg",
-    category:"Hoodie"}, 
+    category:"Buzos"}, 
     
     
     {id: 10, 
     title: "Relaxed-fit  Sweatshirt", 
     price: 4500, 
     image: "./images/Relaxed-fit-Washed-look-Sweatshirt-gris.jpg",
-    category:"Sweatshirt",
+    category:"Buzos",
     },
        
     {id: 11, 
@@ -78,24 +78,24 @@ export const products = [
     title: "Relaxed Fit T-shirt", 
     price: 5500, 
     image: "./images/Relaxed-Fit-Printed-T-shirt-naranja.jpg",
-    category:"T-shirt"},
+    category:"Remeras"},
     
     {id: 14, 
     title: "Relaxed Fit Cotton T-shirts", 
     price: 4500, 
     image: "./images/Relaxed-Fit-T-shirt-celeste.jpg",
-    category:"T-shirt"},
+    category:"Remeras"},
        
     {id: 15, 
     title: "Sneakers", 
     price: 15500, 
     image: "./images/Canvas-Sneakers-mostaza.jpg",
-    category:"Sneakers"},
+    category:"Zapatillas"},
     
     {id: 16, 
     title: "Canvas High Tops",
     price: 16500, 
     image: "./images/Canvas-High-Tops-azul.jpg",
-    category:"Sneakers"}
-    
+    category:"Zapatillas"}
+      
 ]

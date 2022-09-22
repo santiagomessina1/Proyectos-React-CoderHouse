@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemCount from './ItemCount'
 
 const Item = ({ product }) => {
 
@@ -16,9 +15,6 @@ const Item = ({ product }) => {
                     <h4> {product.title} </h4>
                     <h3>$ {product.price} </h3>
                   </div>
-                  {/* <div className="btn-group">
-                    <ItemCount />
-                  </div>*/}
                   <hr />
                   
                   <div className="view-btn">

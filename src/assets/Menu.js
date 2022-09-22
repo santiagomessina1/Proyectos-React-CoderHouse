@@ -1,11 +1,14 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+
 export const Menu = () => {
 
     const categorias = [
         
-        {id: 0, name: 'Mujer', route: "/categoria/Mujer"},
-        {id: 1, name: 'Hombre', route: "/categoria/Hombre"},
+        {id: 0, name: 'Remeras', route: "/categoria/Remeras"},
+        {id: 1, name: 'Buzos', route: "/categoria/Buzos"},
+        {id: 2, name: 'Zapatillas', route: "/categoria/Zapatillas"},
+        {id: 3, name: 'Jeans', route: "/categoria/Jeans"},
 
         ] 
   return (
