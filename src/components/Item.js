@@ -1,12 +1,14 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Item = ({ product }) => {
 
   return (
+
     <section className='products'>
+    <Link to={`/producto/${product.id}`}>
       <div className="card-product">
         <div className="container">
-          <a href="">
+          
             <div className="card">
               <img src={product.image} alt="" />
               <div className="card-body">
@@ -18,15 +20,14 @@ const Item = ({ product }) => {
                   <hr />
                   
                   <div className="view-btn">
-                    <a href="" >Ver mas detalles</a>
+                  <Link to={`/producto/${product.id}`}>Ver mas detalles</Link>
                   </div> 
                 </div>
               </div>
             </div>
-          </a>
-          
         </div>
       </div>
+      </Link>
      
     </section>
   )

@@ -3,15 +3,12 @@ import { ItemList } from './ItemList'
 import { products } from '../assets/products'
 import { customizedFetch } from '../utils/customizedFetch'
 import { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
-  
-  let { categoryId } = useParams() 
-  console.log(categoryId);
+
   const [listProducts, setListProducts] = useState([])
   const [loading, setLoading] = useState(true) 
-  const URL = products
+  
 
   useEffect(() => {
     setLoading(true)

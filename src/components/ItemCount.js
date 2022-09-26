@@ -3,6 +3,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import CartWidget from './CartWidget';
+
+
 function ItemCount() {
     const [count, setCount] = useState(1);
     let stock = count;

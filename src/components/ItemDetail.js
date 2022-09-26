@@ -1,5 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const ItemDetail = ({ productDetail }) => {
     return (
@@ -8,12 +10,7 @@ const ItemDetail = ({ productDetail }) => {
             <div className="container-details-products">
                 <div className="product-image">
                     <img src={productDetail.image} alt="" className="product-pic" />
-                    <div className="dots">
-                        <a href="#!" className="active"><i>1</i></a>
-                        <a href="#!"><i>2</i></a>
-                        <a href="#!"><i>3</i></a>
-                        <a href="#!"><i>4</i></a>
-                    </div>
+
                 </div>
 
                 <div className="product-details">
@@ -28,27 +25,20 @@ const ItemDetail = ({ productDetail }) => {
                         <div className="color">
                             <h5>Color</h5>
                             <ul>
-                                <li><a href="#!" className="colors color-bdot1 active"></a></li>
-                                <li><a href="#!" className="colors color-bdot4"></a></li>
-                                <li><a href="#!" className="colors color-bdot5"></a></li>
+                                <li><span className="colors color-bdot1 active"></span></li>
+                                <li><span className="colors color-bdot4"></span></li>
+                                <li><span className="colors color-bdot5"></span></li>
                             </ul>
                         </div>
 
                     </div>
                     <div className="size">
-                        <div class="dropdown">
-                            <a class="btn dropdown-toggle sizes" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Talles
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item">XS</a></li>
-                                <li><a class="dropdown-item">S</a></li>
-                                <li><a class="dropdown-item">M</a></li>
-                                <li><a class="dropdown-item">L</a></li>
-                                <li><a class="dropdown-item">XL</a></li>
-                            </ul>
-                        </div>
+                        <DropdownButton id="dropdown-basic-button" title="Talles">
+                            <Dropdown.Item href="#/action-1">XS</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">S</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">M</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">L</Dropdown.Item>
+                        </DropdownButton>
                     </div>
                     <div className="qty">
                         <h5>Cantidad:   < ItemCount /> </h5>
@@ -61,6 +51,7 @@ const ItemDetail = ({ productDetail }) => {
                     </div>
                 </div>
             </div>
+
 
         </>
     )

@@ -2,7 +2,7 @@ import React from "react";
 import CartWidget from "./CartWidget";
 import logo from '../logo.png';
 import { Menu } from "../assets/Menu"
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 function NavBar({ categorias }) {
 
   return (
