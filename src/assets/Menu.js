@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 
-export const Menu = () => {
+export const Menu = ({ product }) => {
 
     const categorias = [
         
@@ -11,6 +11,8 @@ export const Menu = () => {
         {id: 3, name: 'Jeans', route: "/categoria/Jeans"},
 
         ] 
+
+
   return (
     <>
     {
@@ -21,7 +23,10 @@ export const Menu = () => {
           
         })
       }
+       
     </>
     
   )
 }
+
+

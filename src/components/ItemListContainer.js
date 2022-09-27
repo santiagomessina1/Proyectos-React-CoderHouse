@@ -3,11 +3,12 @@ import { ItemList } from './ItemList'
 import { products } from '../assets/products'
 import { customizedFetch } from '../utils/customizedFetch'
 import { useEffect, useState } from 'react'
-
+import { useParams } from 'react-router-dom'
 const ItemListContainer = ({ greeting }) => {
 
   const [listProducts, setListProducts] = useState([])
   const [loading, setLoading] = useState(true) 
+  const  {category} = useParams()
   
 
   useEffect(() => {
@@ -16,8 +17,20 @@ const ItemListContainer = ({ greeting }) => {
       .then(res => {
         setLoading(false)
         setListProducts(res)
+
+        if(category){
+          setLoading(false)
+          setListProducts(res.filter(prod => prod.category === category))
+        }
+        else{
+          setLoading(false)
+          setListProducts(res)
+        }
+
       })
-  }, [])
+      
+
+  }, [category])
 
   return (
     <>
@@ -32,6 +45,9 @@ const ItemListContainer = ({ greeting }) => {
           :
           <ItemList listProducts={listProducts} />
         }
+
+
+        
       </section>
     </>
   )

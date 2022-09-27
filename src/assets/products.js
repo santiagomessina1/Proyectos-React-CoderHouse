@@ -3,7 +3,8 @@ export const products = [
     title: "Relaxed Fit Hoodie", 
     price: 4500, 
     image: "./images/hoodie.jpg",
-    category: "Buzos"},
+    category: "Buzos",
+    route: "/categoria/Remeras"},
     
 
    {id: 2, 
