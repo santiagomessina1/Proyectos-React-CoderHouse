@@ -26,7 +26,6 @@ const ItemListContainer = ({ greeting }) => {
           setLoading(false)
           setListProducts(res)
         }
-
       })
       
 

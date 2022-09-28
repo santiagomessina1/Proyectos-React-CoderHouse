@@ -4,13 +4,14 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const ItemDetail = ({ productDetail }) => {
+
+
     return (
         <>
             <hr />
             <div className="container-details-products">
                 <div className="product-image">
-                    <img src={productDetail.image} alt="" className="product-pic" />
-
+                    <img src={`../${productDetail.image}`} alt="" className="product-pic" />
                 </div>
 
                 <div className="product-details">
@@ -19,8 +20,8 @@ const ItemDetail = ({ productDetail }) => {
                         <div className="price">
                             <span className="">${productDetail.price}</span>
                         </div>
-
                     </section>
+
                     <div className="controls">
                         <div className="color">
                             <h5>Color</h5>
@@ -41,13 +42,14 @@ const ItemDetail = ({ productDetail }) => {
                         </DropdownButton>
                     </div>
                     <div className="qty">
-                        <h5>Cantidad:   < ItemCount /> </h5>
+                        <ItemCount/> 
                     </div>
 
                     <div className='details'>
                         <p>MATERIALES, CUIDADOS Y ORIGEN
                             ORIGEN
-                            Trabajamos con nuestros proveedores, trabajadores, sindicatos y organismos internacionales para desarrollar una cadena de suministro en la que se respetan y promueven los derechos humanos. </p>
+                            Trabajamos con nuestros proveedores, trabajadores, sindicatos y organismos internacionales para desarrollar una cadena de suministro en la que se respetan y promueven los derechos humanos. 
+                        </p>
                     </div>
                 </div>
             </div>
