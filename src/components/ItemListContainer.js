@@ -21,6 +21,7 @@ const ItemListContainer = ({ greeting }) => {
         if(category){
           setLoading(false)
           setListProducts(res.filter(prod => prod.category === category))
+          
         }
         else{
           setLoading(false)

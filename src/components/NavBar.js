@@ -3,6 +3,7 @@ import CartWidget from "./CartWidget";
 import logo from '../logo.png';
 import { Menu } from "../assets/Menu"
 import { Link } from 'react-router-dom'
+import { FaHeart } from "react-icons/fa"
 
 function NavBar({ categorias }) {
 
@@ -11,7 +12,10 @@ function NavBar({ categorias }) {
       <header className="headerInicio">
         <nav className="navbar navbar-expand-lg ">
           <div className="container-fluid">
-            <Link className="cart"  to='/Cart'><CartWidget /></Link>
+            <div className="cart-heart">
+              <Link className="cart "  to='/Cart'><CartWidget /></Link>
+              <Link className="heart-nav "  to='/WishList'><FaHeart /></Link>
+            </div>
             <Link to='/'><img src={logo} alt="" className="logo" /></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

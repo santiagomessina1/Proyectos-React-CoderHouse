@@ -1,487 +1,388 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-
-:root {
-    --primaryColor: #455d7a;
-    --mainWhite: #ffffff;
-    --mainBlack: #233142;
-    --mainGreen: #f95959;
-    --mainSpacing: 0.1rem;
-    --mainTransition: all 0.3s linear;
+ :root {
+     --primaryColor: #455d7a;
+     --mainWhite: #ffffff;
+     --mainBlack: #233142;
+     --mainSpacing: 0.1rem;
+     --mainTransition: all 0.3s linear;
 }
-
-body {
-    color: var(--mainBlack);
-    background: var(--mainWhite);
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
+ body {
+     color: var(--mainBlack);
+     background: var(--mainWhite);
+     font-family: "Open Sans", sans-serif;
+     font-weight: 400;
 }
-
+/* ---------------- generall ---------------- */
+ .active{
+     background-color: var(--primaryColor);
+     color: var(--mainWhite) !important;
+}
+ a{
+     text-decoration: none;
+}
 /* ---------------- scroll bar ---------------- */
-::-webkit-scrollbar {
-    width: 10px;
+ ::-webkit-scrollbar {
+     width: 10px;
 }
-
-::-webkit-scrollbar-thumb {
-    background: var(--primaryColor);
-    border-radius: 4px;
+ ::-webkit-scrollbar-thumb {
+     background: var(--primaryColor);
+     border-radius: 4px;
 }
-
-::-webkit-scrollbar-thumb:hover {
-    background: #b3b3b3;
+ ::-webkit-scrollbar-thumb:hover {
+     background: #b3b3b3;
 }
-
-::-webkit-scrollbar-thumb:active {
-    background-color: #999999;
+ ::-webkit-scrollbar-thumb:active {
+     background-color: #999999;
 }
-
-::-webkit-scrollbar-track {
-    background: var(--mainWhite);
-    border-radius: 4px;
-    margin: 3px 0;
+ ::-webkit-scrollbar-track {
+     background: var(--mainWhite);
+     border-radius: 4px;
+     margin: 3px 0;
 }
-
-::-webkit-scrollbar-track:hover,
-::-webkit-scrollbar-track:active {
-  background: #e1e1e1;
+ ::-webkit-scrollbar-track:hover, ::-webkit-scrollbar-track:active {
+     background: #e1e1e1;
 }
-
-.container-fluid{
-  display: flex;
-  flex-direction: column;  
-}
-
-.nav-link{
-  color: black;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.cart{
-  display: flex;
-  justify-content: flex-end;
-  height: 30px;
-  font-size: 30px;
-  width: 100%;
-  
-}
-.logo{
-  width: 150px;
-}
-
-.spinnerInside{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.banner{
-  background-color: rgb(201, 161, 109);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-left: 157px;
-  margin-right: 143px;
-  text-align: center;
-  font-family: "HM Sans Semi Bold","HMSansHebrew-SemiBold","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
-  line-height: 1.166666667;
-  font-size: 1.5rem;
-  color: white;
-  padding: 2%;
-  margin-bottom: 15px;
-}
-
-
-.title, .subTitle{
-  font-weight: bolder;
-}
-
-.products{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-}
-.container a{
-  color: black;
-  text-decoration: none;
-}
-.card{
-  width: 300px;
-  border: none;
-  padding-bottom: 30px;
-}
-.card img{
-  width: 317px;
-}
-
-.card-title h3, h4{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: 20px;
-  color: black;
-  font-weight: 600;
-
-
-}
-.card-title h4:hover{
-  text-decoration: underline;
-}
-.view-btn a{
-  color: black;
-  font-size: 15px;
-  
-}
-.view-btn{
-  margin-top: -10px;
-}
-
-
-footer{
-  background: #e4e4e4;  
-  
-
-}
-
-footer li{
-  font-size: 20px;
-  text-decoration: none;
-  list-style: none;
-  
-}
-
-
-.footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 0px;
-  justify-items: center;
-  align-items: center;
-  }
-  
-  .menu { 
-    grid-area: 1 / 1 / 2 / 2; 
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu h2{
-    font-weight: bolder;
-  }
-  .content { 
-    grid-area: 1 / 2 / 2 / 3;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-   }
-
-  .footerImg { 
-    grid-area: 1 / 3 / 2 / 4; 
-    width: 200px;
-  }
-
-.links{
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  color: #233142;
-  text-decoration: none;
-  
-}
-
-.anchors{
-  text-decoration: none;
-  color: #233142;
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-}
-
-
-footer small{
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-}
-
-
-
-  .spinner{
- 
+/* ---------------- spinner ---------------- */
+ .spinnerInside{
+     height: 100vh;
+     display: flex;
+     justify-content: center;
      align-items: center;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: var(--primaryColor);
-    animation: spin 1s  ease infinite;
-    
-  }
-
-  @keyframes spin{
-    0%{
-      transform: rotate(0deg);
+}
+ .spinner{
+     align-items: center;
+     border: 4px solid rgba(0, 0, 0, 0.1);
+     width: 36px;
+     height: 36px;
+     border-radius: 50%;
+     border-left-color: var(--primaryColor);
+     animation: spin 1s ease infinite;
+}
+ @keyframes spin{
+     0%{
+         transform: rotate(0deg);
     }
-    100%{
-      transform: rotate(360deg);
+     100%{
+         transform: rotate(360deg);
     }
-  }
-
-.container-details-products{
-  display: flex;
-  justify-content: center;
-
-
 }
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* ---------------- nav bar ---------------- */
+ .container-fluid{
+     display: flex;
+     flex-direction: column;
 }
-
-.product-pic{
-  width: 400px;
-
+ .nav-link{
+     color: black;
+     margin-left: 10px;
+     margin-right: 10px;
+     text-align: center;
 }
-.product-details {
-  padding: 40px;
-  background-color: white;
-  border-radius: 0 0 20px 20px;
+ .logo{
+     width: 150px;
 }
-.product-details .title {
-  text-transform: uppercase;
-  margin: 0;
+ .cart-heart{
+     display: flex;
+     justify-content: flex-end;
+     align-items: flex-end;
+     width: 100%;
+     color: #444;
 }
-
-.product-details .price {
-  font-weight: 700;
-  margin-top: 15px;
-  font-size: 25px;
+ .cart, .heart-nav{
+     font-size: 30px;
+     margin-left: 20px;
 }
-.accordion-button h5{
-  margin-left: -18px;
+ .cart{
+     color: rgb(134, 127, 127);
 }
-
-
-.product-details article > h5 {
-  margin: 0;
+ .heart-nav{
+     color: red;
 }
-
-.product-details .controls {
-  margin: 3em 0;
+ .cart:hover {
+     color: #444;
 }
-.product-details .controls > div {
-  flex: 1;
+ .heart-nav:hover{
+     color: rgb(216, 0, 0);
 }
-.product-details .controls .option {
-  margin-top: 12px;
-  display: inline-block;
-  position: relative;
+/* ---------------- banner ---------------- */
+ .banner{
+     background-color: rgb(201, 161, 109);
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     margin-left: 157px;
+     margin-right: 143px;
+     text-align: center;
+     font-family: "HM Sans Semi Bold","HMSansHebrew-SemiBold","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+     line-height: 1.166666667;
+     font-size: 1.5rem;
+     color: var(--mainWhite);
+     padding: 2%;
+     margin-bottom: 15px;
 }
-.product-details .controls .option:hover {
-  color: #444;
+ .title, .subTitle{
+     font-weight: bolder;
 }
-.product-details .controls .option::before {
-  content: '';
-  position: absolute;
-  border-width: 2px 2px 0 0;
-  border-style: solid;
-  top: 0;
-  bottom: 0;
-  height: 5px;
-  width: 5px;
-  right: -18px;
-  margin: auto;
-  transform: rotate(135deg);
+/* ---------------- product gallery ---------------- */
+ .products{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
 }
-.product-details .controls > div + div {
-  margin-top: 20px;
+ .container a{
+     color: black;
+     text-decoration: none;
 }
-.product-details .controls ul {
-  display: flex;
-  margin: 15px 5px;
+ .card{
+     width: 300px;
+     border: none;
+     padding-bottom: 30px;
 }
-.product-details .color li + li {
-  margin-left: 15px;
+ .card img{
+     width: 317px;
 }
-.product-details .colors {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: block;
+ .card-title h3, h4{
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size: 18px;
+     letter-spacing: 0;
+     line-height: 20px;
+     color: black;
+     font-weight: 600;
 }
-.product-details .color-bdot1 {
-  background-color: #59e8c8;
+ .card-title h4:hover{
+     text-decoration: underline;
 }
-.product-details .color-bdot1:hover, .product-details .color-bdot1.active {
-  box-shadow: 0 0 0 3px white, 0 0 0 5px #59e8c8;
+ .view-btn a{
+     color: black;
+     font-size: 15px;
 }
-.product-details .color-bdot2 {
-  background-color: #ffee71;
+ .view-btn{
+     margin-top: -10px;
 }
-.product-details .color-bdot2:hover, .product-details .color-bdot2.active {
-  box-shadow: 0 0 0 3px white, 0 0 0 5px #ffee71;
+/* ---------------- footer ---------------- */
+ footer{
+     background: #e4e4e4;
+     
 }
-.product-details .color-bdot3 {
-  background-color: #6654af;
+ footer .active{
+     padding: 6px;
 }
-.product-details .color-bdot3:hover, .product-details .color-bdot3.active {
-  box-shadow: 0 0 0 3px white, 0 0 0 5px #6654af;
+ footer li{
+     font-size: 20px;
+     text-decoration: none;
+     list-style: none;
 }
-.product-details .color-bdot4 {
-  background-color: #343434;
+ .footer {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: 1fr;
+     grid-column-gap: 20px;
+     grid-row-gap: 0px;
+     justify-items: center;
+     align-items: center;
 }
-.product-details .color-bdot4:hover, .product-details .color-bdot4.active {
-  box-shadow: 0 0 0 3px white, 0 0 0 5px #343434;
+ .menu {
+     grid-area: 1 / 1 / 2 / 2;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
 }
-.product-details .color-bdot5 {
-  background-color: #dfdfdf;
+ .menu h2{
+     font-weight: bolder;
 }
-.product-details .color-bdot5:hover, .product-details .color-bdot5.active {
-  box-shadow: 0 0 0 3px white, 0 0 0 5px #dfdfdf;
+ .content {
+     grid-area: 1 / 2 / 2 / 3;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
 }
-.product-details .rate {
-  position: static;
-  margin-top: 10px;
+ .footerImg {
+     grid-area: 1 / 3 / 2 / 4;
+     width: 200px;
 }
-.product-details .rate a {
-  font-size: 18px;
-  color: #bbb;
+ .links{
+     text-align: center;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     color: var(--mainBlack);
+     text-decoration: none;
 }
-.product-details .rate a.active, .product-details .rate a:hover {
-  color: #fe6067;
+ .anchors{
+     text-decoration: none;
+     color: var(--mainBlack);
+     width: 30px;
+     height: 30px;
+     margin: 10px;
 }
-.dots {
-  display: flex;
-  margin-top: 40px;
-  justify-content: center;
-  margin-bottom: 50px;
+ footer small{
+     text-align: center;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     font-size: 20px;
 }
-.dots > a {
-  background-color: #349a98;
-  width: 10px;
-  height: 10px;
-  margin: 0 4px;
-  border-radius: 50%;
+/* ---------------- product detail ---------------- */
+ .container-details-products{
+     display: flex;
+     justify-content: center;
+     margin-bottom: 30px;
 }
-.dots > a:hover, .dots > a.active {
-  background-color: white;
+ ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
 }
-.dots i {
-  display: none;
+ .product-pic{
+     width: 400px;
 }
-.qty h5{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
+ .product-details {
+     padding: 40px;
+     background-color: var(--mainWhite);
+     border-radius: 0 0 20px 20px;
+     
 }
-
-.sizes{
-  background-color: #233142;
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 0%;
-  width: 90px;
+ .product-details .title {
+     text-transform: uppercase;
+     margin: 0;
 }
-.increase, .decrease{
- 
-  background: none;
-  border: none;
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+ .product-details .price {
+     font-weight: 700;
+     margin-top: 15px;
+     font-size: 25px;
 }
-
-
-.counter{
-  font-size: 20px;
+ .product-details .controls {
+     margin: 12px;
 }
-
+ .qty h5{
+     margin-top: 20px;
+     display: flex;
+     flex-direction: row;
+}
+ .sizes{
+     background-color: var(--mainBlack);
+     color: var(--mainWhite);
+     border: none;
+     padding: 8px;
+     border-radius: 0%;
+     width: 90px;
+}
+ .increase, .decrease{
+     background: none;
+     border: none;
+     font-size: 20px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+}
+ .counter{
+     font-size: 20px;
+}
  .addToCart{
-  display: flex;
-  width: 400px;
-  text-align: center;
-  justify-content: center;
+     display: flex;
+     width: 400px;
+     text-align: center;
+     justify-content: center;
+     border: none;
+     background-color: var(--mainBlack);
+     padding: 8px;
+     color: var(--mainWhite);
+     margin-bottom: 20px;
+}
+ .details{
+     width: 400px;
+     text-align: justify;
+}
+ #dropdown-basic-button{
+     background-color: var(--mainBlack);
+     border: none;
+     border-radius: 0;
+}
+ .inCart{
+     font-size: 20px;
+     background-color: var(--mainBlack);
+     color: var(--mainWhite);
+     font-weight: bold;
+     padding: 8px;
+     width: 200px;
+     margin-top: 20px;
+}
+ .goToCart{
+     color: green;
+     font-weight: bold;
+     font-size: 20px;
+     margin-top: 20px;
+}
+ .liked{
+     color: red;
+     font-size: 40px;
+     cursor: pointer;
+}
+ .disliked{
+     color: #bbb;
+     font-size: 40px;
+     cursor: pointer;
+}
+/* ---------------- Cart view ---------------- */
+ .cartView{
+     height: 100vh;
+     width: 100%;
+}
+ .cartView h1{
+     margin-top: 30px;
+     margin-left: 30px;
+     font-size: 45px;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     letter-spacing: 2px;
+}
+ .cartView h2{
+     text-align: center;
+     margin: 20px;
+}
+ .cartView h4{
+     text-align: center;
+}
+ .cartView img{
+     height: 200px;
+     display: flex;
+     margin: auto;
+     margin-top: 40px;
+     justify-content: center;
+}
+/* ---------------- favorites section ---------------- */
+ .favorites-section{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     height: 100vh;
+     margin-top: 60px;
+}
+ .favorites-section h1{
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 40px;
+     margin-bottom: 40px;
+}
+ .favorites-section h6{
+     width: 40%;
+     text-align: center;
+}
+ .seeMore{
+     color: var(--mainWhite);
+     background-color: var(--primaryColor);
+     padding: 10px;
+     margin-top: 20px;
+}
+ .seeMore:hover{
+     color: #dfdfdf;
+}
+/* ---------------- ---------------- */
+
+
+.botonTalle{
+  background-color: red;
   border: none;
-  background-color: #233142;
-  padding: 8px;
-  color: white;
-  margin-bottom: 20px;
-}
-
-.details{
-  width: 400px;
-  text-align: justify;
-}
-
-
-#dropdown-basic-button{
-  background-color:#233142;
-  border: none;
-  border-radius: 0;
-}
-
-
-.cartView{
-  height: 100vh;
-  width: 100%;
-}
-
-.cartView h1{
-  margin-top: 30px;
-  margin-left: 30px;
-  font-size: 45px;
-  
-}
-.cartView h2{
-  text-align: center;
-  margin: 20px;
-
-}
-
-.active{
-  background-color:#455d7a;
-  color: white;
-}
-.cartView img{
-  height: 200px;
-  display: flex;
-  margin: auto;
-  margin-top: 80px;
-}
-
-a{
-  text-decoration: none;
-}
-
-.inCart{
-  font-size: 20px;
-  background-color: #233142;
-  color: white;
-  font-weight: bold;
-  padding: 8px;
-  width: 200px;
-  margin-top: 20px;
-}
-.goToCart{
-  color: green;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 20px;
-  
+  margin: 2px;
+  width: 40px;
 }

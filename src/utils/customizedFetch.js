@@ -8,7 +8,7 @@ export const customizedFetch = (products, id) => {
             }else{
                 res(products)
             }
-        }, 2000);
+        }, );
     })
   
 }
