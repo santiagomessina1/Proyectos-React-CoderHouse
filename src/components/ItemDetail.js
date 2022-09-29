@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 import  Select  from 'react-select';
 
 const ItemDetail = ({ productDetail }) => {
-    const [cart, setCart] = useState(false)
-    const addToCart = () => setCart(!cart)
+    
     const [wishList, setWishList] = useState(false)
     const liked = () => setWishList(!wishList)
     const disliked = () => setWishList(!wishList)
-    
+    const [changeBtn, setChangeBtn] = useState(false)
+    const onAdd = (count) =>{setChangeBtn(true)}
     return (
         <>
             <hr />
@@ -31,15 +31,15 @@ const ItemDetail = ({ productDetail }) => {
                     
                     <div className="qty">
                         {
-                            cart ?
+                            changeBtn ?
                                 <div>
                                     <Link to="/cart" ><h4 className='goToCart'>Ir al Carrito</h4></Link>
                                     <h4 className='inCart'>¡Producto agregado!</h4>
                                 </div>
                                 :
                                 <div>
-                                    <ItemCount />
-                                    <button className='addToCart' id='addToCart' onClick={addToCart}> <CartWidget /> Agregar al carrito</button>
+                                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                                    {/* <button className='addToCart' id='addToCart' onClick={addToCart}> <CartWidget /> Agregar al carrito</button> */}
                                 </div>
                         }
                     </div>
