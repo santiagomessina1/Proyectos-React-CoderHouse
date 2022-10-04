@@ -10,7 +10,6 @@ export const customizedFetch = (products, id) => {
             }
         }, );
     })
-  
 }
 
 

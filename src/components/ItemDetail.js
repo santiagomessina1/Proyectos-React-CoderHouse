@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ItemCount from './ItemCount'
 import { FaHeart } from "react-icons/fa"
-import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
-import  Select  from 'react-select';
+import { CartContext } from '../Context/CartContext';
+import { FavouritesContext } from '../Context/FavouritesContext';
 
 const ItemDetail = ({ productDetail }) => {
-    
-    const [wishList, setWishList] = useState(false)
-    const liked = () => setWishList(!wishList)
-    const disliked = () => setWishList(!wishList)
+
+    const { addToCart } = useContext(CartContext)
+    const {addToFavourites, deleteToFavourites, wishList} = useContext(FavouritesContext)
     const [changeBtn, setChangeBtn] = useState(false)
-    const onAdd = (count) =>{setChangeBtn(true)}
+
+
+    const onAdd = (qty) => {
+        setChangeBtn(true)
+        addToCart(productDetail, qty)
+    }
     return (
         <>
             <hr />
@@ -26,9 +30,10 @@ const ItemDetail = ({ productDetail }) => {
                         <div className="price">
                             <span className="">${productDetail.price}</span>
                         </div>
+
                     </section>
 
-                    
+
                     <div className="qty">
                         {
                             changeBtn ?
@@ -37,9 +42,8 @@ const ItemDetail = ({ productDetail }) => {
                                     <h4 className='inCart'>¡Producto agregado!</h4>
                                 </div>
                                 :
-                                <div>
+                                <div className='itemCount'>
                                     <ItemCount stock={10} initial={1} onAdd={onAdd} />
-                                    {/* <button className='addToCart' id='addToCart' onClick={addToCart}> <CartWidget /> Agregar al carrito</button> */}
                                 </div>
                         }
                     </div>
@@ -54,12 +58,12 @@ const ItemDetail = ({ productDetail }) => {
                             wishList ?
                                 <>
                                     <h5>¡Agregado a favoritos!</h5>
-                                    <span onClick={disliked}> <FaHeart className='liked' /></span>
+                                    <span onClick={deleteToFavourites}  > <FaHeart className='liked' /></span>
                                 </>
                                 :
                                 <div>
                                     <h5>Agregar a favoritos</h5>
-                                    <span onClick={liked}> <FaHeart className='disliked' /></span>
+                                    <span onClick={addToFavourites} > <FaHeart className='disliked' /></span>
                                 </div>
                         }
                     </div>

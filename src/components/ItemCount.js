@@ -1,37 +1,44 @@
 import React from 'react'
-import { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
 
-function ItemCount({stock, initial, onAdd}) {
-    const [count, setCount] = useState(initial);
-    const [inCart, setInCart] = useState(false)
-    // let stock = count
-    // const addToCart = () =>setInCart(!inCart)
-    // const onAdd = () => setCount(count + 1)
-    // const onSubstract = () => setCount(count - 1)
+function ItemCount({ initial, stock, onAdd }) {
 
-    const addToCart = () =>{
-        onAdd(count)
-        setCount(1)
-    }
+    const [qty, setQty] = useState(initial);
 
+    const addProduct = (num) => {
+        setQty(qty + num);
+    };
 
     return (
-        <>
-            <div className='add'>
-                <div className='values'>
-                    <button disabled={stock >= 10}  className='decrease' onClick={()=> count <stock && setCount((prevState) => prevState + 1)} > <FaArrowLeft /></button>
-                    <span className='counter' stock={5}>{count}</span>
-                    <button  disabled={count === stock && true}  className='increase' onClick={()=> count <stock && setCount((prevState) => prevState + 1)}     ><FaArrowRight />  </button>
-                    <button className='increase' onClick={()=> addToCart(count)}>Agregar al carrito</button>
-
-                    <Toaster />
-                </div>
+        <div>
+            <div >
+                <button
+                    className="decrease"
+                    onClick={() => addProduct(-1)}
+                    disabled={qty === initial ? true : null}
+                >
+                    <FaArrowLeft />
+                </button>
+                <span >{qty}</span>
+                <button
+                    className="increase"
+                    onClick={() => addProduct(+1)}
+                    disabled={qty === stock ? true : null}
+                >
+                    <FaArrowRight />
+                </button>
             </div>
-        </>
+
+            <button
+                className="addToCart"
+                onClick={() => {onAdd(qty)}}
+                disabled={stock === 0 ? true : null}
+            >
+                Añadir al carrito
+            </button>
+
+        </div>
     );
 }
 

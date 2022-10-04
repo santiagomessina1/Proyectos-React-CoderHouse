@@ -291,6 +291,11 @@
      color: var(--mainWhite);
      margin-bottom: 20px;
 }
+
+.selectQty{
+    margin-top: 20px;
+}
+
  .details{
      width: 400px;
      text-align: justify;
@@ -330,7 +335,7 @@
      height: 100vh;
      width: 100%;
 }
- .cartView h1{
+ .cartTitle{
      margin-top: 30px;
      margin-left: 30px;
      font-size: 45px;
@@ -377,12 +382,162 @@
  .seeMore:hover{
      color: #dfdfdf;
 }
-/* ---------------- ---------------- */
+/* ---------------- CART VIEW---------------- */
 
 
-.botonTalle{
-  background-color: red;
-  border: none;
-  margin: 2px;
-  width: 40px;
+.itemsCart{
+    display: flex;
+    justify-content: center;
 }
+.itemsInCart {
+    display: flex;
+    background-color:#f5f5f5;
+    width: 900px;
+    margin: 10px;
+}
+.imgItem{
+    width: 150px;
+
+}
+
+.itemsContent{
+    width:700px;
+    margin-left: 40px;
+}
+.itemsContent h1{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.itemQty, .itemPrice, .itemTotal{
+    font-size: 25px;
+}
+.free-shipping{
+    color: green;
+    margin-top: 20px;
+}
+
+
+
+.description{
+    margin-top: 20px;
+}
+
+.quantities{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin-right: 20px;
+    margin-top: -20px;
+}
+
+.deleteBtn{
+    color: red;
+    background: none;
+    border: none;
+}
+.titleCart{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.removeItem{
+    border: none;
+    background: none;
+    color: red;
+    font-size: 25px;
+}
+.cartDisliked{
+    margin-right: 20px;
+    color: #b3b3b3;
+    font-size: 30px;
+}
+
+.clearCart{
+    background: none;
+    border: none;
+    color: red;
+
+}
+
+.buyBtn{
+    background-color:#455d7a;
+    padding: 6px;
+    border: none;
+    color: white;
+    margin-left: 20px;
+
+}
+
+.cartBtns{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 80px;
+    margin-bottom: 30px;
+}
+
+
+.shoppingCart {
+    position: absolute;
+    right: 60px;
+    top: 1.2rem;
+    color: black;
+  }
+ 
+  .total-qty {
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    background: rgba(255, 82, 82, 1);
+    color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 15px;
+    font-weight: 600;
+    top: 6px;
+    right: 50px;
+    user-select: none;
+    animation: pulse-red 2s infinite;
+    font-size: 20px;
+  }
+
+  @keyframes pulse-red {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

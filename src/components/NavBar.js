@@ -14,7 +14,7 @@ function NavBar({ categorias }) {
           <div className="container-fluid">
             <div className="cart-heart">
               <Link className="cart "  to='/Cart'><CartWidget /></Link>
-              <Link className="heart-nav "  to='/WishList'><FaHeart /></Link>
+              <Link className="heart-nav "  to='/Favoritos'><FaHeart /></Link>
             </div>
             <Link to='/'><img src={logo} alt="" className="logo" /></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
