@@ -1,52 +1,65 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
+
 
 export const CartContext = createContext(null);
 
 const CartProvider = (props) => {
 
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(() =>{
+        try{
+            const productsInLocalStorage = localStorage.getItem("cartProducts");
+            return productsInLocalStorage ? JSON.parse(productsInLocalStorage) : []
+        } catch (error) { return[]}
+    });
+    useEffect(() => {
+      localStorage.setItem("cartProducts", JSON.stringify(cart))
+    }, [cart])
     
-    const addToCart = (item, qty) => {
-        if(cart.some(el => el.id === item.id)){
-            
-            let index = cart.findIndex(el => el.id === item.id);
-            let product = cart[index];
-            let stock = 10
-             if(stock < qty){
-                product.qty = product.qty + qty;
-                const newCart = [...cart];
-                newCart.splice( index, 1, product );
-                setCart([ ...newCart ]);
-             }
 
-        }else{
-            let product = {...item, qty};
-            setCart([...cart, product ]);
+
+
+    const isInCart = (id) => cart.find(prod => prod.id === id);
+
+    const addToCart = (item, qty) => {
+        if (isInCart(item.id)) {
+            const newCart = cart.map(prod => {
+                if (prod.id === item.id) {
+                    const newQuantity = prod.qty + qty;
+                    return { ...prod, qty: newQuantity }
+                } else {
+                    return prod
+                }
+            })
+            setCart(newCart);
+        } else {
+            const newProduct = { ...item, qty: qty }
+            setCart([...cart, newProduct]);
         }
     }
 
-    const deleteCartById = ( id ) => {
-        const newCart = [...cart];
-        let index = newCart.findIndex(el => el.id === id);
-        newCart.splice( index, 1 );
-        setCart([...newCart]);
+    const removeProduct = (id) => setCart(cart.filter(prod => prod.id !== id));
+
+    const cleanCart = () => setCart([]);
+
+    const totalPrice = () => {
+        return cart.reduce((acc, product) => acc += (product.price * product.qty), 0)
     }
 
-    const deleteCart = () => {
-        setCart([]);
+    const totalQuantity = () => {
+        return cart.reduce((acc, product) => acc += product.qty, 0)
     }
 
 
-
-    return(
-        <CartContext.Provider 
-            value={{ 
-                        cart, 
-                        setCart,
-                        addToCart,
-                        deleteCartById,
-                        deleteCart, 
-                   }}
+    return (
+        <CartContext.Provider
+            value={{
+                addToCart,
+                removeProduct,
+                cleanCart,
+                totalPrice,
+                totalQuantity,
+                cart,
+            }}
         >
             {props.children}
         </CartContext.Provider>

@@ -5,7 +5,7 @@ import { CartContext } from '../Context/CartContext'
 const CartWidget = () => {
 
   const cartContext = useContext(CartContext);
-  const { cart } = cartContext;
+  const { cart, totalQuantity } = cartContext;
 
  
   
@@ -15,7 +15,7 @@ const CartWidget = () => {
       {
         cart.length === 0 ?
         <div><FaShoppingCart className='shoppingCart' /></div> :
-        <div>   <FaShoppingCart className='shoppingCart'/> <span className='total-qty'>{cart.length}</span></div>
+        <div>   <FaShoppingCart className='shoppingCart'/> <span className='total-qty'>{totalQuantity()}</span></div>
       }
 
     </div>

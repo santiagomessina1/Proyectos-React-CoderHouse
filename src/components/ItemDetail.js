@@ -1,22 +1,33 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import ItemCount from './ItemCount'
 import { FaHeart } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 import { FavouritesContext } from '../Context/FavouritesContext';
 
+
 const ItemDetail = ({ productDetail }) => {
 
     const { addToCart } = useContext(CartContext)
     const {addToFavourites, deleteToFavourites, wishList} = useContext(FavouritesContext)
-    const [changeBtn, setChangeBtn] = useState(false)
+    const [changeBtn, setChangeBtn] = useState() 
+    
+    // =>{
+    //     const savedItems = localStorage.getItem("savedItem");
+    //     return savedItems ? JSON.parse(savedItems) : []
+    // })
+    // // useEffect(() => {
+    // //     localStorage.setItem("savedItem", JSON.stringify(changeBtn))
+    // //   }, [changeBtn])
 
 
     const onAdd = (qty) => {
         setChangeBtn(true)
         addToCart(productDetail, qty)
     }
-    return (
+
+    
+     return (
         <>
             <hr />
             <div className="container-details-products">

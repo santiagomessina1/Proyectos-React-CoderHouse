@@ -8,11 +8,11 @@ const Cart = () => {
 
     const cartContext = useContext(CartContext);
 
-    const { cart, deleteCartById, deleteCart } = cartContext;
+    const { cart, removeProduct, cleanCart, totalPrice, totalQuantity } = cartContext;
 
     return (
-
         <>
+
             <hr />
             < h1 className='cartTitle'> Carrito de compras</h1 >
 
@@ -21,33 +21,57 @@ const Cart = () => {
                 {cart ? (cart.map(product => {
                     return (<CartItem key={product.id}
                         product={product}
-                        deleteCartById={deleteCartById}
-                        
+                        removeProduct={removeProduct}
+
                     />
-                    
+
                     );
                 }))
                     : <p>Cargando productos</p>
                 }
                 {cart.length ? (
                     <>
-                        
-                        <div className='cartBtns'>
-                            <div className="totalAmount">
-                                
+                        <section className="container">
+                            <article>
+                                <div className="summary">
 
-                            </div>
-                            <button
-                                className="clearCart"
-                                onClick={deleteCart}
-                            >Vaciar Carrito</button>
-                            <button
-                                className="buyBtn"
-                            >Finalizar compra</button>
-                        </div>
+                                    <ul>
+                                        <li>
+                                            Cantidad de productos:  <span>{totalQuantity()}</span>
+                                        </li>
+                                        <li>
+                                            Subtotal <span>${totalPrice()}</span>
+                                        </li>
+                                        <li className='shipping'>
+                                            Envio <span>
+                                                {
+                                                    totalPrice() < 8000 ?
+                                                        <span>$1200</span> :
+                                                        <span> Gratis</span>
+                                                }
+                                            </span>
+                                        </li>
+
+                                        <li className="total">
+                                            Total <span>${totalPrice()}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <section className="checkout">
+                                <div>
+                                    <div className=".checkout-btns">
+                                        <button className='clearCart' onClick={cleanCart}>Vaciar carrito</button>
+                                        <button className='checkOut'>Check Out</button>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                        </section>
                     </>)
                     : <section className='cartView'>
-                        
+
                         <h2>¡Oops tu carrito esta vacio!</h2>
                         <h4>Agrega tus productos haciendo click aqui abajo</h4>
                         <h4> <FaArrowDown /></h4>
@@ -57,14 +81,7 @@ const Cart = () => {
                         </Link>
                     </section >
                 }
-
-                
             </section>
-
-
-
-
-
         </>
     )
 }

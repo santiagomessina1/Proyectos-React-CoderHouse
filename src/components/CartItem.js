@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaHeart, FaTrashAlt } from "react-icons/fa"
+import ItemCount from './ItemCount'
 
-const CartItem = ({ product, deleteCartById, }) => {
+const CartItem = ({ product, removeProduct }) => {
 
 
   return (
@@ -18,7 +19,7 @@ const CartItem = ({ product, deleteCartById, }) => {
               <h1>{product.title}</h1>
               <div>
                 <Link ><FaHeart className='cartDisliked' /></Link>
-                <button onClick={() => deleteCartById(product.id)} className="removeItem" > <FaTrashAlt /></button>
+                <button onClick={() => removeProduct(product.id)} className="removeItem" > <FaTrashAlt /></button>
               </div>
 
 
@@ -26,6 +27,7 @@ const CartItem = ({ product, deleteCartById, }) => {
 
             <h4 className='free-shipping'>Envio gratis</h4>
             <p className='itemQty'>Cantidad: {product.qty}</p>
+       
 
             <div className="quantities">
               <p className='itemPrice'>Precio: ${product.price} </p>
@@ -33,8 +35,6 @@ const CartItem = ({ product, deleteCartById, }) => {
             </div>
 
           </div>
-
-          <h1></h1>
         </section>
       </section>
 
