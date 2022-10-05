@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaHeart, FaTrashAlt } from "react-icons/fa"
+
+import { VscClose } from "react-icons/vsc"
 import ItemCount from './ItemCount'
 
 const CartItem = ({ product, removeProduct }) => {
@@ -15,25 +17,17 @@ const CartItem = ({ product, removeProduct }) => {
             <img src={`../${product.image}`} alt="" className='imgItem' />
           </div>
           <div className="itemsContent">
-            <div className='titleCart'>
-              <h1>{product.title}</h1>
-              <div>
-                <Link ><FaHeart className='cartDisliked' /></Link>
-                <button onClick={() => removeProduct(product.id)} className="removeItem" > <FaTrashAlt /></button>
-              </div>
-
-
-            </div>
-
-            <h4 className='free-shipping'>Envio gratis</h4>
-            <p className='itemQty'>Cantidad: {product.qty}</p>
-       
-
+              <p>{product.title}</p>
             <div className="quantities">
-              <p className='itemPrice'>Precio: ${product.price} </p>
-              <p className='itemPrice'>Total: ${product.price * product.qty} </p>
+            <p>{product.category}</p>
+              <p className='itemPrice'>${product.price} </p>
+              <p className='itemQty'>Qty: {product.qty}</p>
+              <p className='itemTotal'>Total: ${product.price * product.qty} </p>
+              <button onClick={() => removeProduct(product.id)} className="removeItem" > <VscClose /></button>
             </div>
-
+            <div>
+              <Link ><FaHeart className='cartDisliked' /></Link>
+            </div>
           </div>
         </section>
       </section>

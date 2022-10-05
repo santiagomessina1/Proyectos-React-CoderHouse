@@ -48,7 +48,7 @@ const CartProvider = (props) => {
     const totalQuantity = () => {
         return cart.reduce((acc, product) => acc += product.qty, 0)
     }
-
+   
 
     return (
         <CartContext.Provider
@@ -59,6 +59,7 @@ const CartProvider = (props) => {
                 totalPrice,
                 totalQuantity,
                 cart,
+                
             }}
         >
             {props.children}

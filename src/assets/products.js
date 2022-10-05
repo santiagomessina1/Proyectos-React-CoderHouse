@@ -288,7 +288,7 @@ export const products = [
         price: 6500,
         image: "images/regular-jeans.jfif",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -298,7 +298,7 @@ export const products = [
         price: 7500,
         image: "images/Slim-Jeans-azul.jpg",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -308,7 +308,7 @@ export const products = [
         price: 6500,
         image: "images/Slim-Tapered-Cropped-Jeans-negro.jpg",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -319,7 +319,7 @@ export const products = [
         price: 7500,
         image: "images/Slim-Jeans.jpg",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -329,7 +329,7 @@ export const products = [
         price: 7500,
         image: "images/skinny-jeans-2.jfif",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -339,7 +339,7 @@ export const products = [
         price: 7500,
         image: "images/slim-tappered-jeans.jfif",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -350,7 +350,7 @@ export const products = [
         price: 7500,
         image: "images/slim-cropped-jeans.jfif",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -361,7 +361,7 @@ export const products = [
         price: 7500,
         image: "images/regular-tapered-joggers.jfif",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },
@@ -371,7 +371,7 @@ export const products = [
         price: 7500,
         image: "images/relaxed-jeans.jfif",
         category: "Jeans",
-        descrition: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
+        description: "Jeans con cinco bolsillos. Bajo acabado irregular. Cierre frontal con cremallera y botón metálico.",
         talles: ["XS", "S", "M", "L", "XL"],
         amount: 0
     },

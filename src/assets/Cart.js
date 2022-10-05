@@ -2,55 +2,60 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowDown } from "react-icons/fa"
 import { CartContext } from '../Context/CartContext'
+import { BsArrowBarLeft } from "react-icons/bs"
+
 import CartItem from '../components/CartItem'
 
 const Cart = () => {
 
     const cartContext = useContext(CartContext);
 
-    const { cart, removeProduct, cleanCart, totalPrice, totalQuantity } = cartContext;
+    const { cart, removeProduct, cleanCart, totalPrice, totalQuantity,  } = cartContext;
 
     return (
         <>
 
-            <hr />
+
             < h1 className='cartTitle'> Carrito de compras</h1 >
 
             <section className="list-cart-container">
+                <div className="productsInCart">
 
-                {cart ? (cart.map(product => {
-                    return (<CartItem key={product.id}
-                        product={product}
-                        removeProduct={removeProduct}
+                    {cart ? (cart.map(product => {
+                        return (<CartItem key={product.id}
+                            product={product}
+                            removeProduct={removeProduct}
 
-                    />
+                        />
 
-                    );
-                }))
-                    : <p>Cargando productos</p>
-                }
+                        );
+                    }))
+                        : <p>Cargando productos</p>
+                    }
+                    
+                </div>
                 {cart.length ? (
                     <>
-                        <section className="container">
+                        <section className="container-summary">
+
                             <article>
                                 <div className="summary">
 
                                     <ul>
                                         <li>
-                                            Cantidad de productos:  <span>{totalQuantity()}</span>
+                                        Total:
+                                        </li>
+                                        <hr />
+                                        <li>
+                                            Items: {totalQuantity()}<span> ${totalPrice()} </span>
                                         </li>
                                         <li>
-                                            Subtotal <span>${totalPrice()}</span>
+                                            Subtotal: <span>${totalPrice()}</span>
                                         </li>
                                         <li className='shipping'>
-                                            Envio <span>
-                                                {
-                                                    totalPrice() < 8000 ?
-                                                        <span>$1200</span> :
-                                                        <span> Gratis</span>
-                                                }
-                                            </span>
+                                             Envio standard 
                                         </li>
+                                        <hr />
 
                                         <li className="total">
                                             Total <span>${totalPrice()}</span>
@@ -59,17 +64,15 @@ const Cart = () => {
                                 </div>
                             </article>
                             <section className="checkout">
-                                <div>
-                                    <div className=".checkout-btns">
-                                        <button className='clearCart' onClick={cleanCart}>Vaciar carrito</button>
-                                        <button className='checkOut'>Check Out</button>
-                                    </div>
-                                </div>
+                                <button className='checkOut'>Check Out</button>
+                                <button className='clearCart' onClick={cleanCart}>Vaciar carrito</button>
+
                             </section>
 
-
                         </section>
+                        
                     </>)
+
                     : <section className='cartView'>
 
                         <h2>¡Oops tu carrito esta vacio!</h2>
@@ -81,7 +84,10 @@ const Cart = () => {
                         </Link>
                     </section >
                 }
+                
             </section>
+            <Link to="/" className='backToHome'> <BsArrowBarLeft/>Seguir comprando</Link>
+
         </>
     )
 }
