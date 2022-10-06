@@ -4,32 +4,34 @@ import { products } from '../assets/products'
 import { customizedFetch } from '../utils/customizedFetch'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { db } from '../Firebase/firebase'
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
+
+
 const ItemListContainer = ({ greeting }) => {
 
+  const { category } = useParams()
   const [listProducts, setListProducts] = useState([])
-  const [loading, setLoading] = useState(true) 
-  const  {category} = useParams()
-  
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
 
   useEffect(() => {
-    setLoading(true)
-    customizedFetch(products)
-      .then(res => {
-        setLoading(false)
-        setListProducts(res)
 
-        if(category){
-          setLoading(false)
-          setListProducts(res.filter(prod => prod.category === category))
-          
-        }
-        else{
-          setLoading(false)
-          setListProducts(res)
-        }
-      })
-      
-
+    const queryDB = getFirestore()
+    const queryCollection = collection(queryDB, 'products')
+    if (category) {
+      const queryFilter = query(queryCollection, where('category', '==', category))
+      getDocs(queryFilter).then(
+        (res) => setListProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))))
+        .catch(() => setError(true))
+        .finally(() => setLoading(false));
+    } else {
+      getDocs(queryCollection).then(
+        (res) => { setListProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))) })
+        .catch(() => setError(true))
+        .finally(() => setLoading(false));
+    }
   }, [category])
 
   return (
@@ -41,13 +43,13 @@ const ItemListContainer = ({ greeting }) => {
 
       <section className='products'>
         {loading ?
-        <div className="spinnerInside"><div className="spinner"></div></div>
+          <div className="spinnerInside"><div className="spinner"></div></div>
           :
           <ItemList listProducts={listProducts} />
         }
 
 
-        
+
       </section>
     </>
   )

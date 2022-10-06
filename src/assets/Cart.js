@@ -10,7 +10,7 @@ const Cart = () => {
 
     const cartContext = useContext(CartContext);
 
-    const { cart, removeProduct, cleanCart, totalPrice, totalQuantity,  } = cartContext;
+    const { cart, removeProduct, cleanCart, totalPrice, totalQuantity, } = cartContext;
 
     return (
         <>
@@ -32,7 +32,7 @@ const Cart = () => {
                     }))
                         : <p>Cargando productos</p>
                     }
-                    
+
                 </div>
                 {cart.length ? (
                     <>
@@ -43,7 +43,7 @@ const Cart = () => {
 
                                     <ul>
                                         <li>
-                                        Total:
+                                            Total:
                                         </li>
                                         <hr />
                                         <li>
@@ -53,7 +53,7 @@ const Cart = () => {
                                             Subtotal: <span>${totalPrice()}</span>
                                         </li>
                                         <li className='shipping'>
-                                             Envio standard 
+                                            Envio standard
                                         </li>
                                         <hr />
 
@@ -70,24 +70,28 @@ const Cart = () => {
                             </section>
 
                         </section>
-                        
+
                     </>)
 
-                    : <section className='cartView'>
+                    : <section className='emptyCart'>
+                        <div className="cartView">
+                            <h2>¡Oops tu carrito esta vacio!</h2>
+                            <h4>Agrega tus productos haciendo click aqui abajo</h4>
+                            <h4> <FaArrowDown /></h4>
 
-                        <h2>¡Oops tu carrito esta vacio!</h2>
-                        <h4>Agrega tus productos haciendo click aqui abajo</h4>
-                        <h4> <FaArrowDown /></h4>
+                            <Link to="/">
+                                <img src="https://st2.depositphotos.com/47577860/46938/v/450/depositphotos_469389406-stock-illustration-buy-ecommerce-empty-cart-icon.jpg" alt="" />
+                            </Link>
+                        </div>
 
-                        <Link to="/">
-                            <img src="https://st2.depositphotos.com/47577860/46938/v/450/depositphotos_469389406-stock-illustration-buy-ecommerce-empty-cart-icon.jpg" alt="" />
-                        </Link>
                     </section >
                 }
-                
-            </section>
-            <Link to="/" className='backToHome'> <BsArrowBarLeft/>Seguir comprando</Link>
 
+            </section>
+            <div className='backToHome'>
+                <Link to="/" > <BsArrowBarLeft />Seguir comprando</Link>
+
+            </div>
         </>
     )
 }
