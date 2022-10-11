@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { products } from '../assets/products'
-import { customizedFetch } from '../utils/customizedFetch'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import { db } from '../Firebase/firebase'
@@ -20,8 +18,8 @@ const ItemDetailContainer = () => {
         const queryDB = getFirestore()
         const queryDoc = doc(queryDB, 'products', id)
         getDoc(queryDoc)
-            .then(
-                (res) => setProductDetail({ id: res.id, ...res.data() }))
+            .then((res) => setProductDetail({ id: res.id, ...res.data() }))
+            .then(() => setLoader(false))
             .catch(() => setError(true))
             .finally(() => setLoader(false))
     }, [id])

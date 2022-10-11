@@ -404,13 +404,15 @@ ul {
     width: 100%;
     margin: auto;
 }
-.emptyCart{
+
+.emptyCart {
     display: flex;
     width: 100%;
     margin: auto;
     margin-left: -70%;
-    
+
 }
+
 .cartTitle {
     margin-top: 30px;
     margin-left: 30px;
@@ -437,7 +439,7 @@ ul {
 }
 
 /* ---------------- favorites section ---------------- */
-.favorites-section div{
+.favorites-section div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -482,9 +484,9 @@ ul {
 .itemsInCart {
     display: flex;
     flex-wrap: wrap;
-    
+
     margin: 10px;
-    
+
 }
 
 .imgItem {
@@ -510,7 +512,7 @@ ul {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.itemTotal{
+.itemTotal {
     font-weight: bold;
 }
 
@@ -519,8 +521,8 @@ ul {
 .quantities {
     display: flex;
     justify-content: space-between;
-    
-    
+
+
 }
 
 .deleteBtn {
@@ -616,7 +618,7 @@ ul {
     }
 }
 
-.container-summary article  {
+.container-summary article {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -641,7 +643,7 @@ ul {
 
 }
 
-.summary ul{
+.summary ul {
     width: 95%;
 }
 
@@ -650,6 +652,11 @@ ul {
 .checkout {
     display: flex;
     flex-direction: column;
+    text-align: center;
+
+}
+.checkOut:hover{
+    color:cadetblue ;
 }
 
 
@@ -666,23 +673,278 @@ ul {
     display: flex;
 }
 
-.productsInCart{
+.productsInCart {
     width: 70%;
-    
+
 }
 
 
-.container-summary{
-    background-color:#dddddd;
+.container-summary {
+    background-color: #dddddd;
     width: 30%;
     margin-left: 30px;
     margin-right: 30px;
-   
+
 }
 
-.backToHome, .backToHome:hover{
+.backToHome,
+.backToHome:hover {
     color: black !important;
     font-size: 20px;
     margin: 20px;
     padding: 10px;
 }
+
+
+/* ---------------- CHECKOUT---------------- */
+.checkoutView{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.form{
+    width: 40%;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.inputs label{
+    font-family: "HM Sans Regular", HMSansHebrew-Regular, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+}
+.red{
+    color: red;
+}
+.enterValues{
+    border: 1px solid gray;
+}
+/* ---------------- RESPONSIVE DESIGN---------------- */
+.credditCard{
+
+    display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 71%;
+   margin: auto;
+   margin-bottom: 30px;
+}
+
+.cardForm{
+    width: 60%;
+    margin: auto;
+}
+.buyBtn{
+    background-color: black;
+    color: white;
+    width: 93%;
+}
+
+@media only screen and (min-width: 1024px) {
+    .heart-nav {margin-right: -20px;}
+}
+
+@media only screen and (max-width: 780px) {
+    
+    .btns {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .heart-nav {margin-right: -15px;}
+    .logo {margin-top: -40px;}
+    .navbar-toggler {border: none;}
+
+    .banner {
+        width: 81%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .card {width: 300px;}
+    .card img {width: 298px;}
+
+   
+    .container-details-products {
+        flex-wrap: wrap; 
+        width: 99%;
+    }
+    .product-pic {width: 300px;}
+    .addToCart{width: 300px;}
+    .details {width: 300px;}
+
+    .list-cart-container{
+        flex-wrap: wrap;
+    }
+    .productsInCart { 
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .itemsCart {
+        display: flex;    
+        border-top: 1px solid rgb(215, 215, 215);
+        border-bottom: 1px solid rgb(215, 215, 215);
+    }
+    
+    .itemsInCart {
+        display: flex;
+        justify-content: center;
+        width: 100%;    
+    }
+    
+    .imgItem { width: 250px;}
+
+    .itemsContent {
+        width: 450px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .summary ul { width: 100%;}
+    .productsInCart {width: 100%;}
+    .container-summary {width: 98%; margin-top: 30px;}
+
+}
+
+@media only screen and (max-width: 500px) {
+    #root{width: 99%;}
+    .logoContainer {
+        padding-right: 0px;
+        margin-right: 0px;
+        width: 98%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .btns {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .heart-nav {
+        margin-right: -5px;
+    }
+
+    .logo {
+        margin-top: -40px;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .banner {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .card {width: 300px;}
+    .card img {width: 298px;}
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content {
+        width: 250px;
+        margin: 20px;
+    }
+
+
+
+    
+
+    
+/* ---------------- product detail ---------------- */
+.container-details-products {
+    flex-wrap: wrap; 
+    width: 99%;
+}
+.product-pic {width: 300px;}
+.count{width: 99%;}
+.addToCart{width: 300px;}
+.details{width: 100%; }
+.product-details{padding: 1;}
+.details {width: 300px;}
+.product-details section {margin-top: 20px;}
+
+.list-cart-container{
+flex-wrap: wrap;
+}
+
+.productsInCart {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.itemsCart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid rgb(215, 215, 215);
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.itemsInCart {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.imgItem { 
+    width: 250px;
+    display: flex;
+    justify-content: center;
+}
+.items{
+display: flex;
+justify-content: center;
+width: 100%;  
+}
+
+.itemsContent {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.quantities {
+    flex-wrap: wrap;
+    width: 250px;
+}
+.quantities p{margin: 5px;}
+.summary ul { width: 100%;}
+.productsInCart {width: 100%;}
+.container-summary {width: 98%; margin-top: 30px;}
+
+
+
+.emptyCart {margin: auto;}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+

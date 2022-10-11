@@ -11,7 +11,7 @@ function ItemCount({ initial, stock, onAdd }) {
     };
 
     return (
-        <div>
+        <div className='count'>
             <div >
                 <button
                     className="decrease"

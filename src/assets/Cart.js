@@ -3,14 +3,35 @@ import { Link } from 'react-router-dom'
 import { FaArrowDown } from "react-icons/fa"
 import { CartContext } from '../Context/CartContext'
 import { BsArrowBarLeft } from "react-icons/bs"
-
 import CartItem from '../components/CartItem'
+import { collection, addDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
+import { db } from '../Firebase/firebase';
 
 const Cart = () => {
 
     const cartContext = useContext(CartContext);
-
     const { cart, removeProduct, cleanCart, totalPrice, totalQuantity, } = cartContext;
+
+    // const comprador = {
+    //     nombre: "Juan",
+    //     apellido: "Perez",
+    //     email:"juanperez@gmail.com"
+    //   };
+
+    //   const finalizarCompra = ()=>{
+    //     const ventasCollection = collection(db,"sells");
+    //     addDoc(ventasCollection, {
+    //       comprador,
+    //       items: cart,
+    //       date: serverTimestamp(),
+    //       total: totalPrice(),
+
+    //     })
+    //     .then(result=>{
+    //       console.log(result.id);
+    //       cleanCart();
+    //     })
+    //   }
 
     return (
         <>
@@ -32,7 +53,10 @@ const Cart = () => {
                     }))
                         : <p>Cargando productos</p>
                     }
+                    <div className='backToHome'>
+                        <Link to="/" > <BsArrowBarLeft />Seguir comprando</Link>
 
+                    </div>
                 </div>
                 {cart.length ? (
                     <>
@@ -64,7 +88,7 @@ const Cart = () => {
                                 </div>
                             </article>
                             <section className="checkout">
-                                <button className='checkOut'>Check Out</button>
+                                <Link className='checkOut' to="/CheckoutForm">Check Out</Link>
                                 <button className='clearCart' onClick={cleanCart}>Vaciar carrito</button>
 
                             </section>
@@ -88,10 +112,7 @@ const Cart = () => {
                 }
 
             </section>
-            <div className='backToHome'>
-                <Link to="/" > <BsArrowBarLeft />Seguir comprando</Link>
 
-            </div>
         </>
     )
 }

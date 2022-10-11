@@ -8,6 +8,8 @@ import Cart from './assets/Cart'
 import CartProvider from "./Context/CartContext";
 import FavouritesProvider from './Context/FavouritesContext'
 import Favourites from "./assets/Favourites";
+import Checkout from "./components/Checkout";
+import CheckoutForm from "./components/CheckoutForm";
 
 const App = () => {
   const message = "Envio gratis en compras superiores a $8000"
@@ -22,6 +24,8 @@ const App = () => {
             <Route path="/producto/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/Favoritos" element={<Favourites />} />
+            {/* <Route path="/Checkout" element={<Checkout />} /> */}
+            <Route path="/Checkout" element={<CheckoutForm />} />
           </Routes>
           <Footer />
         </FavouritesProvider>

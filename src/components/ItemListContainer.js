@@ -22,16 +22,24 @@ const ItemListContainer = ({ greeting }) => {
     const queryCollection = collection(queryDB, 'products')
     if (category) {
       const queryFilter = query(queryCollection, where('category', '==', category))
-      getDocs(queryFilter).then(
-        (res) => setListProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))))
+      getDocs(queryFilter)
+        .then((res) => setListProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))))
+        .then(() => setLoading(false))
         .catch(() => setError(true))
         .finally(() => setLoading(false));
     } else {
-      getDocs(queryCollection).then(
-        (res) => { setListProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))) })
+      getDocs(queryCollection)
+        .then((res) => { setListProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))) })
+        .then(() => setLoading(false))
         .catch(() => setError(true))
         .finally(() => setLoading(false));
     }
+
+    return () => {
+      setLoading(true);
+      setListProducts([])
+    }
+
   }, [category])
 
   return (

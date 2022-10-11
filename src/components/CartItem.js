@@ -17,9 +17,9 @@ const CartItem = ({ product, removeProduct }) => {
             <img src={`../${product.image}`} alt="" className='imgItem' />
           </div>
           <div className="itemsContent">
-              <p>{product.title}</p>
+            <p>{product.title}</p>
             <div className="quantities">
-            <p>{product.category}</p>
+              <p>{product.category}</p>
               <p className='itemPrice'>${product.price} </p>
               <p className='itemQty'>Qty: {product.qty}</p>
               <p className='itemTotal'>Total: ${product.price * product.qty} </p>
