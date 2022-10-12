@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { CartContext } from '../Context/CartContext'
 import Swal from 'sweetalert2'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../Firebase/firebase';
 
 const Checkout = () => {
@@ -26,11 +26,18 @@ const Checkout = () => {
 
         })
         .then(result => {
+            cart.forEach(product => {
+                actualizarStock(product);
+              });
             cleanCart();
-            console.log(result.id)
         })
     }
     
+
+    const actualizarStock = (product) =>{
+        const updateStock = doc(db, "products", product.id);
+        updateDoc(updateStock,{stock:(product.product.stock - product.totalQuantity)});
+      }
 
     return (
         <>
@@ -69,6 +76,15 @@ const Checkout = () => {
                         return errores;
                     }}
                     onSubmit={(valores, { resetForm }) => {
+                        if(actualizarStock > stock){
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'No hay mas stock!',
+                                
+                              })
+                        } 
+
                         resetForm()
                         setFormSent(true)
                         setData(valores)
