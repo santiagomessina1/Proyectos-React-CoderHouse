@@ -40,7 +40,7 @@ const ItemDetail = ({ productDetail }) => {
                         <img src={`../${productDetail.image}`} alt="" className="product-pic" />
                         </div>
                         <div>
-                            <img src="https://img.a.transfermarkt.technology/portrait/big/28003-1631171950.jpg?lm=1" />
+                        <img src={`../${productDetail.image}`} alt="" className="product-pic" />
                             
                         </div>
                         

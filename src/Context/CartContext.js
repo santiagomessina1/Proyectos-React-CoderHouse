@@ -8,7 +8,7 @@ const CartProvider = (props) => {
     const [cart, setCart] = useState(() =>{
         try{
             const productsInLocalStorage = localStorage.getItem("cartProducts");
-            return productsInLocalStorage ? JSON.parse(productsInLocalStorage) : []
+            return productsInLocalStorage ? JSON.parse(productsInLocalStorage.filter(item => item.coun > 0)) : []
         } catch (error) { return[]}
     });
     useEffect(() => {
