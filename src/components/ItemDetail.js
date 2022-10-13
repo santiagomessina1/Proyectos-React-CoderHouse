@@ -4,14 +4,15 @@ import { FaHeart } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 import { FavouritesContext } from '../Context/FavouritesContext';
-
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const ItemDetail = ({ productDetail }) => {
 
     const { addToCart } = useContext(CartContext)
-    const {addToFavourites, deleteToFavourites, wishList} = useContext(FavouritesContext)
-    const [changeBtn, setChangeBtn] = useState() 
-    
+    const { addToFavourites, deleteToFavourites, wishList } = useContext(FavouritesContext)
+    const [changeBtn, setChangeBtn] = useState()
+
     // =>{
     //     const savedItems = localStorage.getItem("savedItem");
     //     return savedItems ? JSON.parse(savedItems) : []
@@ -26,13 +27,25 @@ const ItemDetail = ({ productDetail }) => {
         addToCart(productDetail, qty)
     }
 
-    
-     return (
+
+    return (
         <>
             <hr />
             <div className="container-details-products">
                 <div className="product-image">
-                    <img src={`../${productDetail.image}`} alt="" className="product-pic" />
+
+
+                    <Carousel>
+                        <div>
+                        <img src={`../${productDetail.image}`} alt="" className="product-pic" />
+                        </div>
+                        <div>
+                            <img src="https://img.a.transfermarkt.technology/portrait/big/28003-1631171950.jpg?lm=1" />
+                            
+                        </div>
+                        
+                    </Carousel>
+
                 </div>
 
                 <div className="product-details">

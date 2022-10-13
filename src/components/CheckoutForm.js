@@ -26,18 +26,18 @@ const Checkout = () => {
 
         })
         .then(result => {
-            cart.forEach(product => {
-                actualizarStock(product);
-              });
+            // cart.forEach(product => {
+            //     actualizarStock(product);
+            //   });
             cleanCart();
         })
     }
     
 
-    const actualizarStock = (product) =>{
-        const updateStock = doc(db, "products", product.id);
-        updateDoc(updateStock,{stock:(product.product.stock - product.totalQuantity)});
-      }
+    // const actualizarStock = (product) =>{
+    //     const updateStock = doc(db, "products", product.id);
+    //     updateDoc(updateStock,{stock:(product.product.stock - product.totalQuantity)});
+    //   }
 
     return (
         <>
@@ -76,14 +76,14 @@ const Checkout = () => {
                         return errores;
                     }}
                     onSubmit={(valores, { resetForm }) => {
-                        if(actualizarStock > stock){
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'No hay mas stock!',
+                        // if(actualizarStock > stock){
+                        //     Swal.fire({
+                        //         icon: 'error',
+                        //         title: 'Oops...',
+                        //         text: 'No hay mas stock!',
                                 
-                              })
-                        } 
+                        //       })
+                        // } 
 
                         resetForm()
                         setFormSent(true)
