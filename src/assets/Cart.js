@@ -4,14 +4,7 @@ import { FaArrowDown } from "react-icons/fa";
 import { CartContext } from "../Context/CartContext";
 import { BsArrowBarLeft } from "react-icons/bs";
 import CartItem from "../components/CartItem";
-import {
-  collection,
-  addDoc,
-  serverTimestamp,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
-import { db } from "../Firebase/firebase";
+
 
 const Cart = () => {
   const cartContext = useContext(CartContext);
