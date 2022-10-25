@@ -10,16 +10,9 @@ import { FavoriteContext } from "../Context/FavoritesContext";
 const ItemDetail = ({ productDetail }) => {
   const { addToCart } = useContext(CartContext);
   const { addToFavorite, removeProduct } = useContext(FavoriteContext);
-  const [changeBtn, setChangeBtn] = useState();
-  
+  const [changeBtn, setChangeBtn] = useState(false);
+  const [changeFavBtn, setChangeFavBtn] = useState(false);
 
-  // =>{
-  //     const savedItems = localStorage.getItem("savedItem");
-  //     return savedItems ? JSON.parse(savedItems) : []
-  // })
-  // // useEffect(() => {
-  // //     localStorage.setItem("savedItem", JSON.stringify(changeBtn))
-  // //   }, [changeBtn])
 
   const onAdd = (qty) => {
     setChangeBtn(true);
@@ -31,15 +24,18 @@ const ItemDetail = ({ productDetail }) => {
       <hr />
       <div className="container-details-products">
         <div className="product-image">
-          <Carousel>
-            <div>
+          <Carousel className="ImgProducts"
+          width={500}
+          showStatus={false}
+          >
+            <div className="ImgProducts">
               <img
                 src={`../${productDetail.image}`}
                 alt=""
                 className="product-pic"
               />
             </div>
-            <div>
+            <div className="ImgProducts">
               <img
                 src={`../${productDetail.image}`}
                 alt=""
@@ -51,7 +47,39 @@ const ItemDetail = ({ productDetail }) => {
 
         <div className="product-details">
           <section>
-            <h1 className="title"> {productDetail.title} </h1>
+          <div className="heart">
+            {changeFavBtn ? (
+              <div>
+                <span>
+                  {" "}
+                  <FaHeart
+                    className="liked"
+                    onClick={() => {
+                      setChangeFavBtn(!changeFavBtn)
+                      removeProduct(productDetail.id)
+                    
+                    }}
+                  />
+                </span>
+              </div>
+            ) : (
+              <div>
+                <span>
+                  {" "}
+                  <FaHeart
+                    className="disliked"
+                    onClick={() => {
+                      setChangeFavBtn(!changeFavBtn)
+                      addToFavorite(productDetail)
+                    }}
+                  />
+                </span>
+              </div>
+            )}
+          </div>
+            <h1 className="title"> {productDetail.title} 
+            
+            </h1>
             <div className="price">
               <span className="">${productDetail.price}</span>
             </div>
@@ -74,17 +102,6 @@ const ItemDetail = ({ productDetail }) => {
 
           <div className="details">
             <p>{productDetail.description}</p>
-          </div>
-          <div className="heart">
-            
-              <div>
-                <h5>Agregar a favoritos</h5>
-                <span>
-                  {" "}
-                  <FaHeart className="disliked" onClick={addToFavorite} />
-                </span>
-              </div>
-           
           </div>
         </div>
       </div>

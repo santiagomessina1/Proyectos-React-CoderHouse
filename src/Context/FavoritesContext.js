@@ -1,39 +1,39 @@
 import React, { createContext, useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 export const FavoriteContext = createContext(null);
 
-const FavoriteProvider = ({children}) => {
-  const [favorite, setFavorite] = useState([]) 
+const FavoriteProvider = ({ children }) => {
+  const [favorite, setFavorite] = useState(() => {
+    try {
+      const favsInLocalStorage = localStorage.getItem("favProducts");
+      return favsInLocalStorage
+        ? JSON.parse(favsInLocalStorage)
+        : [];
+    } catch (error) {
+      return [];
+    }
+  });
+  useEffect(() => {
+    localStorage.setItem("favProducts", JSON.stringify(favorite));
+  }, [favorite]);
+  
 
+  const favExist = (id) => favorite.find((prod) => prod.id === id);
 
-//   const isInFavorite = (id) => favorite.find((prod) => prod.id === id) ? true : false;
-
-//   const addToFavorite = (item) => {
-//     if (isInFavorite(item.id)) {
-//       alert("el producto ya fue agregado");
-//     } else {
-//       const newProduct = { ...item };
-//       setFavorite([...favorite, newProduct]);
-//     }
-//   };
-
-const addToFavorite = (product) =>{
-    // const favExist = favorite.find((item) => item.id === product.id)
-    // if(favExist){
-    //     setFavorite(alert('el producto ya esta en el carrito'))
-    // }else{
-      alert('producto agregado')
-        setFavorite([...favorite, product])
-    // }
-}
-
-  const removeProduct = (id) =>{
+  const addToFavorite = (item) => {
+    if (favExist(item.id)) {
+      toast.error("El producto ya esta en el carrito")
+    } else {
+      setFavorite([...favorite, item]);
+    }
+  };
+  const removeProduct = (id) => {
     setFavorite(favorite.filter((prod) => prod.id !== id));
-}
-   
+  };
+
   const cleanFavorite = () => setFavorite([]);
 
-  
   return (
     <FavoriteContext.Provider
       value={{
@@ -41,7 +41,6 @@ const addToFavorite = (product) =>{
         removeProduct,
         cleanFavorite,
         favorite,
-        
       }}
     >
       {children}

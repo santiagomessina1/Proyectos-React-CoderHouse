@@ -16,7 +16,10 @@ const ItemDetailContainer = () => {
     getDoc(queryDoc)
       .then((res) => setProductDetail({ id: res.id, ...res.data() }))
       .then(() => setLoader(false))
-      .catch(() => setError(true))
+      .catch(() => {
+        setError(true);
+        console.error(error);
+      })
       .finally(() => setLoader(false));
   }, [id]);
 

@@ -153,6 +153,8 @@ a {
   font-weight: bolder;
 }
 
+
+
 /* ---------------- product gallery ---------------- */
 .products {
   display: flex;
@@ -183,6 +185,7 @@ h4 {
   line-height: 20px;
   color: black;
   font-weight: 600;
+
 }
 
 .card-title h4:hover {
@@ -280,6 +283,7 @@ footer small {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  margin-top: 60px;
 }
 
 ul {
@@ -296,11 +300,13 @@ ul {
   padding: 40px;
   background-color: var(--mainWhite);
   border-radius: 0 0 20px 20px;
+
 }
 
 .product-details .title {
   text-transform: uppercase;
   margin: 0;
+  width: 600px;
 }
 
 .product-details .price {
@@ -384,19 +390,29 @@ ul {
   font-size: 20px;
   margin-top: 20px;
 }
-
+.heart{
+  text-align: end;
+  width: 550px;
+  margin-top: -80px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
 .liked {
   color: red;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
-
+.liked:hover{
+  color: #bbb;
+}
 .disliked {
   color: #bbb;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
-
+.disliked:hover{
+  color: red;
+}
 /* ---------------- Cart view ---------------- */
 .cartView {
   height: 100vh;
@@ -442,7 +458,7 @@ ul {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .favorites-section h1 {
@@ -541,6 +557,7 @@ ul {
   margin-right: 20px;
   color: #b3b3b3;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .clearCart {
@@ -742,6 +759,35 @@ ul {
   padding: 5px;
   margin-left: 2px;
 }
+
+.productsInFav{
+  display: flex;
+  width: 1300px;
+  flex-wrap: wrap;
+  margin: auto;
+  
+}
+
+.FavCard{
+  width: 400px;
+}
+
+.deleteToFav{
+  margin-top: -70px;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.favsTitle{
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+.favItemImage{
+width: 400px;
+}
+
 @media only screen and (min-width: 1024px) {
   .heart-nav {
     margin-right: -20px;
@@ -785,7 +831,11 @@ ul {
   .product-pic {
     width: 300px;
   }
-  .addToCart {
+  .ImgProducts{
+    width: 300px !important;
+    height: 100px;
+  }
+  .favorite .addToCart {
     width: 300px;
   }
   .details {
@@ -893,6 +943,7 @@ ul {
   .container-details-products {
     flex-wrap: wrap;
     width: 99%;
+    
   }
   .product-pic {
     width: 300px;

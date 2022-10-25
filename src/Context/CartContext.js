@@ -6,9 +6,7 @@ const CartProvider = (props) => {
   const [cart, setCart] = useState(() => {
     try {
       const productsInLocalStorage = localStorage.getItem("cartProducts");
-      return productsInLocalStorage
-        ? JSON.parse(productsInLocalStorage.filter((item) => item.coun > 0))
-        : [];
+      return productsInLocalStorage ? JSON.parse(productsInLocalStorage) : [];
     } catch (error) {
       return [];
     }
@@ -17,6 +15,7 @@ const CartProvider = (props) => {
     localStorage.setItem("cartProducts", JSON.stringify(cart));
   }, [cart]);
 
+  
   const isInCart = (id) => cart.find((prod) => prod.id === id);
 
   const addToCart = (item, qty) => {

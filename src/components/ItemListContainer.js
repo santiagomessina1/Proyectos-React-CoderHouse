@@ -31,7 +31,10 @@ const ItemListContainer = ({ greeting }) => {
           )
         )
         .then(() => setLoading(false))
-        .catch(() => setError(true))
+        .catch(() => {
+          setError(true);
+          console.error(error);
+        })
         .finally(() => setLoading(false));
     } else {
       getDocs(queryCollection)

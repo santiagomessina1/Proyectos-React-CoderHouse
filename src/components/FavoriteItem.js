@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
+import ItemCount from "./ItemCount";
+import { GrTrash } from "react-icons/gr";
+import { CartContext } from "../Context/CartContext";
 const FavoriteItem = ({ productDetail, removeProduct }) => {
+  const { addToCart } = useContext(CartContext);
+  const onAdd = (qty) => {
+    addToCart(productDetail, qty);
+  };
 
-    return (
+  return (
     <>
       <section className="products">
-          <div className="card-product">
-            <div className="container">
-              <div className="card">
-                <img src={productDetail.image} alt="" className="itemImage" />
-                <div className="card-body">
-                  <div className="row">
-                    <div className="card-title">
-                      <h4> {productDetail.title} </h4>
-                      <h3>$ {productDetail.price} </h3>
-                    </div>
-                    <hr />
-                    <div className="view-btn">
-                      <Link to={`/producto/${productDetail.id}`}>
-                        Ver mas detalles
-                      </Link>
-                      <FaHeart className="disliked" onClick={removeProduct}/>
-                    </div>
+        <div className="fav-product">
+          <div className="container">
+            <div className="FavCard">
+              <img src={productDetail.image} alt="" className="favItemImage" />
+
+              <div className="card-body">
+                
+                  <GrTrash
+                    className="deleteToFav"
+                    onClick={() => removeProduct(productDetail.id)}
+                  />
+                
+                <div className="row">
+                  <div className="card-title">
+                    <h4> {productDetail.title} </h4>
+                    <h3>$ {productDetail.price} </h3>
+                  </div>
+                  <hr />
+                  <div className="view-btn">
+                    <Link to={`/producto/${productDetail.id}`}>
+                      Ver mas detalles
+                    </Link>
+                  </div>
+                  <div className="favorite">
+                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
       </section>
     </>
   );
