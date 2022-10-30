@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
 import { CartContext } from "../Context/CartContext";
-import { BsArrowBarLeft } from "react-icons/bs";
 import CartItem from "../components/CartItem";
 
 const Cart = () => {
