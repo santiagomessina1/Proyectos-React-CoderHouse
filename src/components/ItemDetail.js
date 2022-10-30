@@ -1,21 +1,21 @@
 import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
-import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { HiOutlineHeart } from "react-icons/hi";
+import { HiHeart } from "react-icons/hi";
+
 import { CartContext } from "../Context/CartContext";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import { FavoriteContext } from "../Context/FavoritesContext";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Toaster } from "react-hot-toast";
 
 const ItemDetail = ({ productDetail }) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, changeBtn } = useContext(CartContext);
   const { addToFavorite, removeProduct } = useContext(FavoriteContext);
-  const [changeBtn, setChangeBtn] = useState(false);
   const [changeFavBtn, setChangeFavBtn] = useState(false);
 
-
   const onAdd = (qty) => {
-    setChangeBtn(true);
     addToCart(productDetail, qty);
   };
 
@@ -24,21 +24,18 @@ const ItemDetail = ({ productDetail }) => {
       <hr />
       <div className="container-details-products">
         <div className="product-image">
-          <Carousel className="ImgProducts"
-          width={500}
-          showStatus={false}
-          >
+          <Carousel className="ImgProducts" width={500} showStatus={false}>
             <div className="ImgProducts">
               <img
-                src={`../${productDetail.image}`}
-                alt=""
+                src={productDetail.image}
+                alt={productDetail.title}
                 className="product-pic"
               />
             </div>
             <div className="ImgProducts">
               <img
-                src={`../${productDetail.image}`}
-                alt=""
+                src={productDetail.image2}
+                alt={productDetail.title}
                 className="product-pic"
               />
             </div>
@@ -47,41 +44,38 @@ const ItemDetail = ({ productDetail }) => {
 
         <div className="product-details">
           <section>
-          <div className="heart">
-            {changeFavBtn ? (
-              <div>
-                <span>
-                  {" "}
-                  <FaHeart
-                    className="liked"
-                    onClick={() => {
-                      setChangeFavBtn(!changeFavBtn)
-                      removeProduct(productDetail.id)
-                    
-                    }}
-                  />
-                </span>
-              </div>
-            ) : (
-              <div>
-                <span>
-                  {" "}
-                  <FaHeart
-                    className="disliked"
-                    onClick={() => {
-                      setChangeFavBtn(!changeFavBtn)
-                      addToFavorite(productDetail)
-                    }}
-                  />
-                </span>
-              </div>
-            )}
-          </div>
-            <h1 className="title"> {productDetail.title} 
-            
-            </h1>
+            <div className="heart">
+              {changeFavBtn ? (
+                <div>
+                  <span>
+                    {" "}
+                    <HiHeart
+                      className="liked"
+                      onClick={() => {
+                        setChangeFavBtn(!changeFavBtn);
+                        removeProduct(productDetail.id);
+                      }}
+                    />
+                  </span>
+                </div>
+              ) : (
+                <div>
+                  <span>
+                    {" "}
+                    <HiOutlineHeart
+                      className="disliked"
+                      onClick={() => {
+                        setChangeFavBtn(!changeFavBtn);
+                        addToFavorite(productDetail);
+                      }}
+                    />
+                  </span>
+                </div>
+              )}
+            </div>
+            <h1 className="title"> {productDetail.title}</h1>
             <div className="price">
-              <span className="">${productDetail.price}</span>
+              <span>${productDetail.price}</span>
             </div>
           </section>
 
@@ -96,6 +90,7 @@ const ItemDetail = ({ productDetail }) => {
             ) : (
               <div className="itemCount">
                 <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                <Toaster position="top-right" reverseOrder={false} />
               </div>
             )}
           </div>

@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { CartContext } from "../Context/CartContext";
-import Swal from "sweetalert2";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../Firebase/firebase";
+import { CartContext } from "../Context/CartContext";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const cartContext = useContext(CartContext);
@@ -213,7 +213,7 @@ const Checkout = () => {
             <div className="orderNumber">
               <br />
               <h2>
-                Su numero de compra es:
+                Su número de compra es:
                 <span> {orderNumber}</span>
               </h2>
             </div>

@@ -7,9 +7,7 @@ const FavoriteProvider = ({ children }) => {
   const [favorite, setFavorite] = useState(() => {
     try {
       const favsInLocalStorage = localStorage.getItem("favProducts");
-      return favsInLocalStorage
-        ? JSON.parse(favsInLocalStorage)
-        : [];
+      return favsInLocalStorage ? JSON.parse(favsInLocalStorage) : [];
     } catch (error) {
       return [];
     }
@@ -17,13 +15,12 @@ const FavoriteProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("favProducts", JSON.stringify(favorite));
   }, [favorite]);
-  
 
   const favExist = (id) => favorite.find((prod) => prod.id === id);
 
   const addToFavorite = (item) => {
     if (favExist(item.id)) {
-      toast.error("El producto ya esta en el carrito")
+      toast.error("El producto ya esta en favoritos");
     } else {
       setFavorite([...favorite, item]);
     }

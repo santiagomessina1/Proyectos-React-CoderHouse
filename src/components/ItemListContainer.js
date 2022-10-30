@@ -10,6 +10,8 @@ import {
   where,
 } from "firebase/firestore";
 
+import ScrollToTop from "react-scroll-to-top";
+
 const ItemListContainer = ({ greeting }) => {
   const { category } = useParams();
   const [listProducts, setListProducts] = useState([]);
@@ -69,6 +71,9 @@ const ItemListContainer = ({ greeting }) => {
         ) : (
           <ItemList listProducts={listProducts} />
         )}
+
+        <ScrollToTop smooth />
+        
       </section>
     </>
   );

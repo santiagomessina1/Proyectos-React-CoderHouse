@@ -38,7 +38,7 @@ function NavBar({ categorias }) {
             <div className="logoContainer">
               {" "}
               <Link to="/">
-                <img src={logo} alt="" className="logo" />
+                <img src={logo} alt="Logo" className="logo" />
               </Link>
             </div>
 

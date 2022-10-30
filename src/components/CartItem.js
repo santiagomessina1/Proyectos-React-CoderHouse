@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
 import { VscClose } from "react-icons/vsc";
 
 const CartItem = ({ product, removeProduct }) => {
@@ -9,7 +7,7 @@ const CartItem = ({ product, removeProduct }) => {
       <section className="itemsCart">
         <section className="itemsInCart">
           <div className="items">
-            <img src={`../${product.image}`} alt="" className="imgItem" />
+            <img src={product.image} alt={product.title} className="imgItem" />
           </div>
           <div className="itemsContent">
             <p>{product.title}</p>
@@ -25,11 +23,7 @@ const CartItem = ({ product, removeProduct }) => {
                 <VscClose />
               </button>
             </div>
-            <div>
-              <Link>
-                <FaHeart className="cartDisliked" />
-              </Link>
-            </div>
+            
           </div>
         </section>
       </section>

@@ -9,26 +9,26 @@ const Favorites = () => {
   return (
     <>
       <section className="list-fav-container">
-      <h1 className="favsTitle"> Favoritos</h1>
+        <h1 className="favsTitle"> Favoritos</h1>
         <div className="productsInFav">
           {favorite ? (
-           favorite.map((productDetail) => {
-             return (
-               <FavoriteItem
-                 key={productDetail.id}
-                 productDetail={productDetail}
-                 removeProduct={removeProduct}
-               />
-             );
-           })
-         ) : (
+            favorite.map((productDetail) => {
+              return (
+                <FavoriteItem
+                  key={productDetail.id}
+                  productDetail={productDetail}
+                  removeProduct={removeProduct}
+                />
+              );
+            })
+          ) : (
             <p>Cargando productos</p>
           )}
         </div>
         {favorite.length ? (
           <>
             <div className="favBtns">
-              <button className="clearFav" onClick={cleanFavorite}>
+              <button className="cleanFav" onClick={cleanFavorite}>
                 Vaciar Lista de Favoritos
               </button>
             </div>
@@ -36,7 +36,6 @@ const Favorites = () => {
         ) : (
           <section className="favorites-section">
             <div>
-              
               <h3>Guarda tus items favoritos</h3>
               <h6>
                 ¿Queres guardar los productos que mas te gustan? Hace click en

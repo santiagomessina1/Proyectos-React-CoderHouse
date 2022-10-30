@@ -32,7 +32,7 @@ function ItemCount({ initial, stock, onAdd }) {
       <button
         className="addToCart favAddToCart"
         onClick={() => {
-          onAdd(qty);
+            onAdd(qty);
         }}
         disabled={stock === 0 ? true : null}
       >

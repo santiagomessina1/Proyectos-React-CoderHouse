@@ -3,6 +3,7 @@ import { Menu } from "../assets/Menu";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import footerLogo from "../logo_without_bg.png";
+
 const Footer = () => {
   return (
     <>
@@ -20,7 +21,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <img src={footerLogo} alt="" className="footerImg" />
+          <img src={footerLogo} alt="Logo" className="footerImg" />
         </section>
 
         <div className="links">

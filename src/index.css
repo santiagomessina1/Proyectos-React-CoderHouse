@@ -109,7 +109,7 @@ a {
 
 .cart,
 .heart-nav {
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 20px;
 }
 
@@ -402,9 +402,6 @@ ul {
   font-size: 30px;
   cursor: pointer;
 }
-.liked:hover{
-  color: #bbb;
-}
 .disliked {
   color: #bbb;
   font-size: 30px;
@@ -481,6 +478,14 @@ ul {
 
 .seeMore:hover {
   color: #dfdfdf;
+}
+
+.cleanFav{
+  color: red;
+  border: none;
+  background: none;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 
 /* ---------------- CART VIEW---------------- */
@@ -584,7 +589,7 @@ ul {
 .shoppingCart {
   position: absolute;
   right: 60px;
-  top: 1.2rem;
+  top: 1.1rem;
   color: black;
 }
 
@@ -629,6 +634,12 @@ ul {
   flex-direction: column;
 }
 
+.container-summary{
+  margin-bottom: 30px;
+
+}
+
+
 .summary {
   display: flex;
   justify-content: center;
@@ -636,6 +647,7 @@ ul {
   padding: 10px;
   text-transform: uppercase;
   font-weight: bold;
+
 }
 
 .summary ul li {

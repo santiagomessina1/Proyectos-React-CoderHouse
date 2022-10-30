@@ -5,7 +5,6 @@ import { CartContext } from "../Context/CartContext";
 import { BsArrowBarLeft } from "react-icons/bs";
 import CartItem from "../components/CartItem";
 
-
 const Cart = () => {
   const cartContext = useContext(CartContext);
   const {
@@ -15,7 +14,6 @@ const Cart = () => {
     totalPrice,
     totalQuantity,
   } = cartContext;
-
 
   return (
     <>
@@ -34,15 +32,9 @@ const Cart = () => {
               );
             })
           ) : (
-            <p>Cargando productos</p>
+            <p>Cargando productos...</p>
           )}
-          <div className="backToHome">
-            <Link to="/">
-              {" "}
-              <BsArrowBarLeft />
-              Seguir comprando
-            </Link>
-          </div>
+          
         </div>
         {cart.length ? (
           <>

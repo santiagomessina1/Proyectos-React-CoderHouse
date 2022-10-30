@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
 import { GrTrash } from "react-icons/gr";
 import { CartContext } from "../Context/CartContext";
+import { Toaster } from "react-hot-toast";
+import ItemCount from "./ItemCount";
+
 const FavoriteItem = ({ productDetail, removeProduct }) => {
   const { addToCart } = useContext(CartContext);
-  const onAdd = (qty) => {
-    addToCart(productDetail, qty);
-  };
+  const onAdd = (qty) => addToCart(productDetail, qty);
 
   return (
     <>
@@ -18,12 +18,11 @@ const FavoriteItem = ({ productDetail, removeProduct }) => {
               <img src={productDetail.image} alt="" className="favItemImage" />
 
               <div className="card-body">
-                
-                  <GrTrash
-                    className="deleteToFav"
-                    onClick={() => removeProduct(productDetail.id)}
-                  />
-                
+                <GrTrash
+                  className="deleteToFav"
+                  onClick={() => removeProduct(productDetail.id)}
+                />
+
                 <div className="row">
                   <div className="card-title">
                     <h4> {productDetail.title} </h4>
@@ -36,7 +35,9 @@ const FavoriteItem = ({ productDetail, removeProduct }) => {
                     </Link>
                   </div>
                   <div className="favorite">
-                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                    <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+                    <Toaster position="top-right" reverseOrder={false} />
+
                   </div>
                 </div>
               </div>
