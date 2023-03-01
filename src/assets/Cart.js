@@ -33,7 +33,6 @@ const Cart = () => {
           ) : (
             <p>Cargando productos...</p>
           )}
-          
         </div>
         {cart.length ? (
           <>

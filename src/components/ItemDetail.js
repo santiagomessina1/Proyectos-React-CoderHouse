@@ -11,11 +11,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Toaster } from "react-hot-toast";
 
 const ItemDetail = ({ productDetail }) => {
-  const { addToCart, changeBtn } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const { addToFavorite, removeProduct } = useContext(FavoriteContext);
   const [changeFavBtn, setChangeFavBtn] = useState(false);
-
+  const [changeBtn, setChangeBtn] = useState(false);
   const onAdd = (qty) => {
+    setChangeBtn(true);
     addToCart(productDetail, qty);
   };
 
