@@ -25,7 +25,7 @@ const ItemDetail = ({ productDetail }) => {
       <hr />
       <div className="container-details-products">
         <div className="product-image">
-          <Carousel className="ImgProducts" width={500} showStatus={false}>
+          <Carousel className="ImgProducts "  showStatus={false}>
             <div className="ImgProducts">
               <img
                 src={productDetail.image}

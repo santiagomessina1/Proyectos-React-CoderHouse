@@ -285,7 +285,9 @@ footer small {
   margin-bottom: 30px;
   margin-top: 60px;
 }
-
+.ImgProducts{
+  width: 500px;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -899,7 +901,8 @@ width: 400px;
 
 @media only screen and (max-width: 500px) {
   #root {
-    width: 99%;
+    width: 320px;
+ 
   }
   .logoContainer {
     padding-right: 0px;
@@ -952,13 +955,42 @@ width: 400px;
   }
 
   /* ---------------- product detail ---------------- */
-  .container-details-products {
-    flex-wrap: wrap;
-    width: 99%;
+   .container-details-products {
+    height: 1100px;
+    margin: auto;
     
   }
-  .product-pic {
-    width: 300px;
+  .heart{
+    width: 450px;
+  }
+  .ImgProducts{
+    width: 250px;
+    height: 500px;
+    padding-bottom:0px;
+
+  }
+  
+  .carousel .thumbs-wrapper {
+    margin: 20px;
+    overflow: hidden;
+    margin-top: -130px !important; 
+  
+}
+
+
+ 
+
+  
+  .title{
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  
+ 
+  .carousel{
+    margin-top: 150px;
   }
   .count {
     width: 99%;
@@ -969,14 +1001,25 @@ width: 400px;
   .details {
     width: 100%;
   }
-  .product-details {
+
+  .product-image{
     padding: 1;
+    height: 200px;
+  }
+  .product-details {
+   width: 300px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 450px;
   }
   .details {
     width: 300px;
   }
   .product-details section {
     margin-top: 20px;
+    padding: 0%;
   }
 
   .list-cart-container {
@@ -1041,5 +1084,5 @@ width: 400px;
 
   .emptyCart {
     margin: auto;
-  }
+  } 
 }
