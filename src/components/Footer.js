@@ -16,8 +16,7 @@ const Footer = () => {
           <div className="content">
             <p>
               El contenido de esta pagina esta inspirado en la Tienda de H&M.
-              Desarrollada para el curso de React en CoderHouse por Santiago
-              Messina
+      
             </p>
           </div>
 
